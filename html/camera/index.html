@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+</head>
+  
+<body>
+
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas> 
+<input type="text" id="value" value="60"/>
+</br>
+<canvas id="canvas2" width="640" height="480"></canvas>
+
+<script>
+// Put event listeners into place
+window.addEventListener("DOMContentLoaded", function() {
+	// Grab elements, create settings, etc.
+	var canvas = document.getElementById("canvas"),
+		context = canvas.getContext("2d"),
+		canvas2 = document.getElementById("canvas2"),
+		context2 = canvas.getContext("2d"),
+		video = document.getElementById("video"),
+		element = document.getElementById('value'),
+		videoObj = { "video": true },
+		bgImg,
+		errBack = function(error) {
+			console.log("Video capture error: ", error.code); 
+		};
+	video.style.display = "none"
+	// Put video listeners into place
+	if(navigator.getUserMedia) { // Standard
+		navigator.getUserMedia(videoObj, function(stream) {
+			video.src = stream;
+			video.play();
+		}, errBack);
+	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+		navigator.webkitGetUserMedia(videoObj, function(stream){
+			video.src = window.webkitURL.createObjectURL(stream);
+			video.play();
+		}, errBack);
+	}
+
+	removeBG = function(){
+		//ctx = canvas.getContext("2d");
+
+		var imgd = context.getImageData(0, 0, 640, 480),
+			pix = imgd.data,
+			pixBg = bgImg.data;
+
+		var check = element.value;
+		if(!check.length)
+			check = 50
+
+		for (var i = 0, n = pix.length; i <n; i += 4) {
+		    	var r = pix[i]-pixBg[i],
+	    	        g = pix[i+1]-pixBg[i+1],
+	        	    b = pix[i+2]-pixBg[i+2],
+				rgb = r + g + b;
+	        	  /*  ro = pix[i],
+	    	        go = pix[i+1],
+	        	    bo = pix[i+2],
+
+	        	    rn = pixBg[i],
+	    	        gn = pixBg[i+1],
+	        	    bn = pixBg[i+2],
+	            	rgb = r + g + b;
+	           
+	           		var luma = 0.2126 * ro + 0.7152 * go + 0.0722 * bo;
+	           		var lumaBg = 0.2126 * rn + 0.7152 * gn + 0.0722 * bn;*/
+				/*if(g+10>r && g>b && check >0){			
+	            	// make the pixel transparent
+	           	pix[i + 3] = 0;
+	        	}*/
+	        	//var diif = lumaBg - luma;
+	        	/*if(diif<check && diif>-check)
+	        		pix[i + 3] = 0;*/
+	        	/*if(rgb<check && rgb>-check) {
+	        		pix[i + 3] = 0;
+	        		//console.log(rgb)
+	        	}*/
+	        	if((r<check && r>-check) && (g<check && g>-check) && (b<check && b>-check) && (rgb<check && rgb>-check)) {
+	        		pix[i + 3] = 0;
+	        		//console.log(rgb)
+	        	}
+		}
+	
+		context.putImageData(imgd, 0, 0);
+
+	}
+
+	// Trigger photo take
+	play = function() {
+		context.drawImage(video, 0, 0, 640, 480);
+		removeBG();
+		setTimeout(play, 200);
+	}
+	snap = function() {
+		setTimeout(snapTimeout, 2000)
+	}
+	snapTimeout = function() {
+		context.drawImage(video, 0, 0, 640, 480);
+		bgImg = context.getImageData(0, 0, 640, 480);
+		//context2.drawImage(bgImg, 0, 0, 640, 480);
+		context2.putImageData(bgImg, 0, 0);
+		console.log("gdfg");
+		//setTimeout(play, 100);
+	}
+
+	document.getElementById("snap").addEventListener("click", function() {
+		snap();
+	});
+	snapTimeout();
+	play();
+}, false);
+</script>
+</body>
+</html>

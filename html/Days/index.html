@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" /><title>Simple days counter and calendar</title>
+<meta name="Description" content="Dayz " />
+<meta name="Keywords"  content="Days count" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+<style type="text/css">body { background-color: #DDDDDD; font: 30px sans-serif; }</style></head>
+<body>
+<p>Выберите: 
+<select onchange="select()" id="day">
+</select>
+    
+<select onchange="update()" id="mou">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    	<option value="6">6</option>
+    	<option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+</select>
+    
+<select onchange="update()" id="year">
+</select> 
+    <!-- <input type="text" id="year" onchange="init()" value="2012"></p> -->
+</p>
+<div id="Grid"></div>
+<div id="text"></div>
+<script type="text/javascript">
+mou_select = document.getElementById('mou');
+god_select = document.getElementById('year');
+day_select = document.getElementById('day');
+
+year_start = 1900;
+year_end = new Date().getFullYear();
+var def_create = [2012, 12, 29];
+palka=1;
+
+var mo = [7,1,2,3,4,5,6];
+
+var days_in_month = [
+	[0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+	[0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+];
+
+var aday = ["00",
+		"01",  "02",  "03",  "04",  "05",  "06",  "07",
+		"08", "09", "10", "11", "12", "13", "14",
+		"15", "16", "17", "18", "19", "20", "21",
+		"22", "23", "24", "25", "26", "27", "28",
+		"29", "30", "31"
+];
+
+function is_leap(year) {
+  if (year % 4)         return 0;
+  if (year % 100)       return 1;
+  if (year % 400)       return 0;
+  return 1;
+}
+
+function getDay(day,mon,year){
+ day=parseInt(day, 10);
+ mon=parseInt(mon, 10);
+ var a=parseInt((14-mon)/12);
+ var y=year-a;
+ var m=mon+12*a-2;
+ var d=(7000+parseInt(day+y+parseInt(y/4)-parseInt(y/100)+parseInt(y/400)+(31*m)/12))%7;
+ return mo[d];
+}
+
+function init() {
+   year =god_select.value;
+   mounth = mou_select.value;
+   end=1;
+   rowString = "";
+   day=1;
+   days=days_in_month[0][mounth];
+   if(is_leap(year))
+       days=days_in_month[1][mounth];
+    while(end) {
+        
+        for (var counts = 1; counts < 8 ; counts++) {
+            num_day = getDay(day, mounth, year);
+            if (num_day==0)
+                num_day=7
+            if (num_day==counts){ 
+                rowString += aday[day] + " ";
+                day++;
+                if(day>days)
+                    counts=8;
+            }else 
+                rowString += "   ";
+     
+		}
+        if(day>days)
+            end=0;
+        rowString += "\n";
+    }
+    var container = document.getElementById("Grid");
+	container.innerHTML = "";
+	var elem = document.createElement('pre');
+	container.appendChild(elem);
+	elem.appendChild(document.createTextNode(rowString));
+	for(var y = year_end; y >= year_start; y--)
+	{
+		var x = document.createElement("option");
+		x.setAttribute("value", y.toString());
+		var t = document.createTextNode(y.toString());
+		x.appendChild(t);
+		document.getElementById("year").appendChild(x);
+	}
+}
+
+function update() {
+   days=days_in_month[0][mou_select.value];
+   if(is_leap(god_select.value))
+       days=days_in_month[1][mou_select.value];
+    while (day_select.options.length > 0) {
+		day_select.remove(0);
+	}
+    for (var counts = 1; counts <= days ; counts++) {
+        var new_opt = document.createElement('option');
+        new_opt.text = counts;
+        new_opt.value = counts;
+        day_select.add(new_opt, null);
+    }
+    init();
+    select();
+}
+
+function select() {
+    year =god_select.value;
+    mounth = mou_select.value;
+    day = day_select.value;
+    
+    var timestmp = new Date().setFullYear(new Date().getFullYear(), 0, 1);
+    var yearFirstDay = Math.floor(timestmp / 86400000);
+    var today = Math.ceil((new Date().getTime()) / 86400000);
+    var dayOfYear = today - yearFirstDay;
+
+    
+    dat1 = new Date(year, mounth-1, day);
+    dat1_create = new Date(def_create[0], def_create[1]-1, def_create[2]);
+    now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    dat = (today.getTime() - dat1.getTime()) / (1000*60*60*24);
+	dat_create = (today.getTime() - dat1_create.getTime()) / (1000*60*60*24);
+    if(palka){
+        text_s = "Сейчас "+ dayOfYear +" день в году\nСоздано "+Math.floor(dat_create)+" дней назад";
+        palka=0;
+    }
+    else
+        text_s = "Прошло "+Math.floor(dat)+" дней";
+    
+    var container = document.getElementById("text");
+    container.innerHTML = "";
+    var elem = document.createElement('pre');
+    container.appendChild(elem);
+    elem.appendChild(document.createTextNode(text_s));
+}
+update();
+</script>
+</body>
+</html>

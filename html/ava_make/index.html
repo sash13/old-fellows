@@ -1,0 +1,59 @@
+﻿</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>demo</title>
+  
+</head>
+<body>
+  <canvas id="canvas" width="200", height="200">
+<img src="https://dl.dropbox.com/u/1664148/html/ava_make/sample.png">
+</canvas>   <div id="buttons">
+        </div>
+
+<script type='text/javascript'>
+w = 20
+h = 20
+d = 10 
+    
+function update() {
+    for (i=0;i<w;i++){
+        for (j=0;j<h;j++){
+          c.fillStyle = 'rgb(' + Math.floor((Math.random()*256)) + ',' + 
+                     Math.floor((Math.random()*256)) + ','+ 
+                      Math.floor((Math.random()*256))+')';
+          c.fillRect(j*d,i*d,d,d);
+        }
+    }
+}
+function init() {
+    element = document.getElementById("canvas");
+    c = element.getContext("2d");
+    update();
+
+    var saveImage = document.createElement("button");
+    saveImage.innerHTML = "Save Image";
+    saveImage.addEventListener("click", function (evt) {
+        window.open(element.toDataURL("image/png"));
+    }, false);
+    document.getElementById("buttons").appendChild(saveImage);
+
+    var updateImage = document.createElement("button");
+    updateImage.innerHTML = "Update";
+    updateImage.addEventListener("click", function (evt) {
+        update();
+    }, false);
+    document.getElementById("buttons").appendChild(updateImage);
+
+}
+
+init();
+ 
+
+</script>
+
+
+</body>
+</html>

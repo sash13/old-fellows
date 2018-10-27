@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" /><title>forked: CreateJSのDOMElementでDOM要素をコントロール - js do it</title>
+<meta name="Description" content="jsdo.it - share JavaScript, HTML5 and CSS - " />
+<meta name="Keywords"  content="JavaScript,HTML5,CSS" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+<style type="text/css">div.info{
+    top:0;
+    left:0;
+    max-width:350px;
+    line-height: 150%;
+    font-size:1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+div.box{
+    background-color: #FFF;
+    top:0;
+    left:0;
+    max-width:300px;
+    border-radius: 10px;
+    padding: 1em;
+    line-height: 150%;
+    font-size:0.8em;
+    text-align: center;
+}
+
+strong {
+    text-emphasis-style: filled dot ;
+    -webkit-text-emphasis-style: filled dot ;
+}
+
+body {
+  background: #ffd;
+}
+.center {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -200px;
+   margin-left: -200px;
+}
+
+</style></head>
+<body>
+<script src="createjs-2013.02.12.min.js"></script>
+<script src="movieclip-0.6.1.min.js"></script>
+<script src="8xX76"></script>
+
+	<canvas id="canvas" width="400" height="400" style="background-color:#a0d453"></canvas>
+	<div class="info" id="info">
+    	s@
+	</div>
+	<div class="box" id="fukidashi">
+	    sup
+	</div>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<script type="text/javascript">
+// forked from umeyoshioka's "CreateJSのDOMElementでDOM要素をコントロール" http://jsdo.it/umeyoshioka/j9Re
+var canvas, stage;
+//わが劇団の誇る主演男優用
+var hiyoko=[];
+//これにDOM要素を突っ込みます
+var fukidashi;		
+var ctx;
+//この辺はひよこの移動用
+var direc = 0;
+var HIYOKO_HEIGHT = 150;
+var HIYOKO_SPEED = 10;
+var HIYOKO_COUNT = 40;
+var STAGE_WIDTH = 400;
+
+//吹き出しに表示するHTML管理用
+var fukidashiList;
+var fukidashiIndex = 0;
+
+var num =0;
+
+function init() {
+    //いつもの
+    canvas = document.getElementById("canvas");
+    stage = new createjs.Stage(canvas);
+    ctx = canvas.getContext("2d");
+  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+STAGE_WIDTH = window.innerWidth;
+    createjs.Ticker.setFPS(12);
+    createjs.Ticker.addEventListener("tick", stage);
+    createjs.Touch.enable(stage);
+
+    //ひよこ生成
+    for(var i =0;i<HIYOKO_COUNT;i++) {
+        hiyoko[i] = new lib.MC_Hiyoko();
+        hiyoko[i].gotoAndPlay("wait");
+        hiyoko[i].x = Math.floor((Math.random()*10)+1)*150;
+        hiyoko[i].y = HIYOKO_HEIGHT+Math.floor((Math.random()*10)+1)*70;
+        stage.addChild(hiyoko[i]);
+    }
+    //説明文をDOMElementとして取得し、Stage上に表示（重ねる）
+    var info = new createjs.DOMElement("info");
+    stage.addChild(info);
+    info.y = 50;
+    info.x = 25;
+
+    //吹き出しをDOMElementとして取得
+
+        fukidashi = new createjs.DOMElement("fukidashi");
+        stage.addChild(fukidashi);
+        //吹き出しの位置をひよこに合わせて調整
+        setFukidashiPos();
+    
+
+    //ひよこの移動処理スタート
+    createjs.Ticker.addEventListener("tick", moveHiyoko);
+    stage.addEventListener("stagemousedown",dashHiyoko);
+    stage.addEventListener("stagemouseup",stopHiyoko);
+
+    //吹き出しのセリフ定義
+    //吹き出しのセリフ定義
+    fukidashiList = [
+        "квох-квох",
+        "пук",
+        "<strong>кукарек</strong>",
+        "кококо",
+        "швабодка",
+        "pooq",
+        "Join us now and share the software;",
+        "You'll be free, hackers, you'll be free.",
+        "Join us now and share the software;",
+        "You'll be free, hackers, you'll be free.",
+        "Hoarders can get piles of money,",
+        "That is true, hackers, that is true.",
+        "But they cannot help their neighbors;",
+        "That's not good, hackers, that's not good.",
+        "When we have enough free software",
+        "At our call, hackers, at our call,",
+        "We'll kick out those dirty licenses",
+        "Ever more, hackers, ever more.",
+        "Join us now and share the software;",
+        "You'll be free, hackers, you'll be free.",
+        "Join us now and share the software;",
+        "You'll be free, hackers, you'll be free."
+    ];
+    fukidashiIndex = 0;
+    //吹き出しの内容を、Tweenを利用して変更していく(ちょっと適当で済みませぬ)
+    createjs.Tween.get(fukidashi,{loop:true})
+                    .to({alpha:0},0)
+                    .call(setFukidashi)
+                    .to({alpha:1},200)
+                    .wait(2500)
+                    .to({alpha:0},100)
+                    .wait(200)
+                    .call(setFukidashi)
+                    .to({alpha:1},200)
+                    .wait(2000)
+                    .to({alpha:0},100)
+                    .wait(200)
+                    .call(setFukidashi)
+                    .to({alpha:1},200)
+                    .wait(2000)
+                    .to({alpha:0},100)
+                    .wait(200);
+
+}
+
+//DOM要素であるfukidashiの、CreateJSワールド上での位置調整
+function setFukidashiPos(){
+    //hiyokoに追随させる
+        
+        fukidashi.x = hiyoko[num].x;
+        fukidashi.y =  hiyoko[num].y - HIYOKO_HEIGHT;
+    
+}
+
+//吹き出しの内容を更新する関数
+function setFukidashi(){
+    num = Math.floor((Math.random()*(HIYOKO_COUNT-1))+1);
+     dashSomeHiyoko();
+    //jQueryさんの力を借りて、fukidashi内のHTMLを更新する
+    $("#fukidashi").html(fukidashiList[fukidashiIndex++]);
+        fukidashiIndex%=fukidashiList.length;
+        //jQueryさんの力を借りて、現在の幅・高さを取得し、その値を元に座標の基準値を更新
+        fukidashi.regX = $("#fukidashi").width()/2;
+        fukidashi.regY = $("#fukidashi").height();
+   
+}
+
+//このあたりはひよこの移動処理
+function dashHiyoko(e){
+    direc = (e.stageX>hiyoko[0].x)?1:-1;
+    if(direc==-1){
+        hiyoko[0].gotoAndPlay("turnLeft");
+        
+    }else{
+        hiyoko[0].gotoAndPlay("turnRight");
+    }
+}
+
+function dashSomeHiyoko(){
+    if(num%2){
+        hiyoko[num].gotoAndPlay("turnLeft");
+        hiyoko[num].gotoAndPlay("wait");
+    }else{
+        hiyoko[num].gotoAndPlay("turnRight");
+        hiyoko[num].gotoAndPlay("wait");
+    }
+}
+
+function moveHiyoko(){
+    hiyoko[0].x=(STAGE_WIDTH +hiyoko[0].x+HIYOKO_SPEED*direc)%STAGE_WIDTH ;
+    setFukidashiPos();
+   
+}
+function stopHiyoko(e){
+    direc = 0;
+    hiyoko[0].gotoAndPlay("wait");
+}
+
+document.body.onload = init;
+</script>
+</body>
+</html>
+

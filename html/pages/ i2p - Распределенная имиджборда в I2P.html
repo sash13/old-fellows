@@ -1,0 +1,5427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0039)http://hiddenchan.i2p/i2p/res/5465.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>/i2p - 
+Распределенная имиджборда в I2P
+</title>
+<link rel="shortcut icon" href="http://hiddenchan.i2p//favicon.ico">
+<link rel="gettext" type="application/x-po" href="http://hiddenchan.i2p//inc/lang/ru/LC_MESSAGES/kusaba.po">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="Sat, 17 Mar 1990 00:00:01 GMT">
+
+<script type="text/javascript" src="./ i2p - Распределенная имиджборда в I2P_files/gettext.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./ i2p - Распределенная имиджборда в I2P_files/protoaculous-compressed.js"></script>
+<link rel="stylesheet" type="text/css" href="./ i2p - Распределенная имиджборда в I2P_files/img_global.css">
+<link rel="alternate stylesheet" type="text/css" href="./ i2p - Распределенная имиджборда в I2P_files/burichan.css" title="Burichan" disabled="">
+<link rel="alternate stylesheet" type="text/css" href="./ i2p - Распределенная имиджборда в I2P_files/futaba.css" title="Futaba" disabled="">
+<link rel="alternate stylesheet" type="text/css" href="./ i2p - Распределенная имиджборда в I2P_files/neutron.css" title="Neutron" disabled="">
+<link rel="stylesheet" type="text/css" href="./ i2p - Распределенная имиджборда в I2P_files/photon.css" title="Photon">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://hiddenchan.i2p/i2p/rss.xml">
+
+<script type="text/javascript"><!--
+var ku_boardspath = 'http://hiddenchan.i2p';
+var ku_cgipath = 'http://hiddenchan.i2p';
+var style_cookie = "kustyle";
+var ispage = false;
+
+//--></script>
+<script type="text/javascript" src="./ i2p - Распределенная имиджборда в I2P_files/kusaba.js"></script>
+<script type="text/javascript"><!--
+var hiddenthreads = getCookie('hiddenthreads').split('!');
+//--></script>
+
+<script type="text/javascript">function DESU_hideClick(el) {			window.postMessage("D" + el.parentNode.getAttribute("info"), "*");		}		function DESU_hideOver(el) {			window.postMessage("A" + el.parentNode.getAttribute("info"), "*");		}		function DESU_delSelection(e) {			if(e.relatedTarget && !document.evaluate("ancestor-or-self::div[@id='DESU_select']", e.relatedTarget, null, 3, null).booleanValue) {				var el = document.getElementById("DESU_select");				if(el) {					el.parentNode.removeChild(el);				}			}		}		function DESU_qReplyClick(el) {			window.postMessage("F" + el.parentNode.getAttribute("info"), "*");		}		function DESU_qReplyOver(el) {			window.postMessage("C" + el.parentNode.getAttribute("info"), "*");		}		function DESU_expandClick(el) {			window.postMessage("E" + el.parentNode.getAttribute("info"), "*");		}		function DESU_expandOver(el) {			window.postMessage("B" + el.parentNode.getAttribute("info"), "*");		}		function DESU_favorClick(el) {			window.postMessage("G" + el.parentNode.getAttribute("info"), "*");		}		function DESU_sageClick(el) {			window.postMessage("H" + el.parentNode.getAttribute("info"), "*");		}</script><script type="text/javascript">(function() {		"use strict";		window.addEventListener("message", function(e) {			var id = e.data[0],				data = e.data.substring(1);			if(id === "K") {				var mReqs = data === "all" ? 4 : 1, i = mReqs, rjw;preloadImages(data, mReqs, rjw);				return;			}		});		function $X(path, root) {			return document.evaluate(path, root, null, 7, null);		}		function $x(path, root) {			return document.evaluate(path, root, null, 8, null).singleNodeValue;		}function toBlob(arr) {
+	try {
+		return new Blob(arr);
+	} catch(e) {
+		var bb = false ? new MozBlobBuilder() : new WebKitBlobBuilder(),
+			i = 0,
+			len = arr.length;
+		while(i < len) {
+			bb.append(arr[i++]);
+		}
+		return bb.getBlob();
+	}
+}function getPostImages(el) {
+	return $X('.//img[@class="thumb" or contains(@src,"thumb") or contains(@src,"/spoiler") or starts-with(@src,"blob:")]', el);
+}function getPost(el) {
+	return $x('ancestor::*[@desu-post]', el);
+}function getPicWrap(el) {
+			return getPost(el);
+		}function preloadImages(pNum, mReqs, rjw) {			var len, el, cReq = 0, i = 0, arr = [],				bwrk = mReqs === 4 ? [0, 0, 0, 0] : [0],				loadFunc = function(idx) {					if(idx >= arr.length) {						if(cReq === 0) {							mReqs = cReq = i = arr = loadFunc = null;						}						return;					}					var xhr, eImg = true,						a = arr[idx],						url = a.href;					if(/.gif$/i.test(url)) {						eImg = true;					} else if(!/.(?:jpe?g|png)$/i.test(url)) {						loadFunc(i++);						return;					}					if(cReq === mReqs) {						setTimeout(loadFunc, 500, idx);						return;					}					cReq++;					xhr = new XMLHttpRequest();					xhr.open("GET", url, true);					xhr.responseType = "arraybuffer";					xhr.onload = function() {						if(this.status == 200) {							var href = a.href = window.webkitURL.createObjectURL(toBlob([this.response]));							if(eImg) {								a.getElementsByTagName("img")[0].src = href;							}cReq--; loadFunc(i++); a = eImg = null;						}					};					xhr.send(null);				};el = getPostImages(pNum === "all" ? document : $x(".//*[@desu-post='" + pNum + "']", document));			for(i = 0, len = el.snapshotLength; i < len; i++) {				arr.push($x("ancestor::a[1]", el.snapshotItem(i)));			}			for(i = 0; i < mReqs; i++) {				loadFunc(i);			}		}})()</script><style id="DESU_css" type="text/css">#DESU_contentCfg > div { float: left; border-radius: 10px 10px 0 0; width: auto; min-width: 0; padding: 0; margin: 5px 20px; overflow: hidden; }		#DESU_cfgHead { padding: 4px; border-radius: 10px 10px 0 0; color: #fff; text-align: center; font: bold 14px arial; cursor: default; }		#DESU_cfgHead:lang(en), #DESU_panel:lang(en) { background: -webkit-linear-gradient(top, #4b90df, #3d77be 5px, #376cb0 7px, #295591 13px, rgba(0,0,0,0) 13px), -webkit-linear-gradient(top, rgba(0,0,0,0) 12px, #183d77 13px, #1f4485 18px, #264c90 20px, #325f9e 25px); }		#DESU_cfgHead:lang(ru), #DESU_panel:lang(ru) { background: url("data:image/gif;base64,R0lGODlhAQAZAMQAABkqTSRDeRsxWBcoRh48axw4ZChOixs0Xi1WlihMhRkuUQwWJiBBcSpTkS9bmxAfNSdKgDJfoQ0YKRElQQ4bLRAjOgsWIg4fMQsVHgAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAQAZAEAFFWDETJghUAhUAM/iNElAHMpQXZIVAgA7"); }		#DESU_cfgHead:lang(de), #DESU_panel:lang(de) { background: #777; }		#DESU_cfgHead:lang(fr), #DESU_panel:lang(fr) { background: -webkit-linear-gradient(top, #7b849b, #616b86 2px, #3a414f 13px, rgba(0,0,0,0) 13px), -webkit-linear-gradient(top, rgba(0,0,0,0) 12px, #121212 13px, #1f2740 25px); }		.DESU_cfgUnvis { display: none; }		.DESU_cfgBody { min-width: 371px; min-height: 300px; padding: 11px 7px 7px; margin-top: -1px; font: 13px sans-serif; }		.DESU_cfgBody input[type="text"] { width: auto; }		.DESU_cfgBody input[value=">"] { width: 20px; }		.DESU_blockInp { display: block; }		.DESU_cfgBody, #DESU_cfgBtns { border: 1px solid #183d77; border-top: none; }		.DESU_cfgBody:lang(de), #DESU_cfgBtns:lang(de) { border-color: #444; }		#DESU_cfgBtns { padding: 7px 2px 2px; }		#DESU_cfgBar { height: 25px; width: 100%; display: table; background-color: #1f2740; margin: 0; padding: 0; }		#DESU_cfgBar:lang(en) { background-color: #325f9e; }		#DESU_cfgBar:lang(ru) { background-color: #0c1626; }		#DESU_cfgBar:lang(de) { background-color: #777; }		#DESU_cfgBar > li { display: table-cell !important; float: none !important; min-width: 0; padding: 0 !important; box-shadow: none !important; border: none !important; border-radius: 4px 4px 0 0; opacity: 1; }		.DESU_cfgTab, .DESU_cfgTab_sel { padding: 4px 6px; border: 1px solid #183d77; border-radius: 4px 4px 0 0; font: bold 14px arial; text-align: center; cursor: default; }		.DESU_cfgTab:lang(de), .DESU_cfgTab_sel:lang(de) { border-color: #444; }		.DESU_cfgTab:lang(fr), .DESU_cfgTab_sel:lang(fr) { border-color: #121421; }		.DESU_cfgTab { background-color: rgba(0,0,0,.2); }		.DESU_cfgTab:lang(en), .DESU_cfgTab:lang(fr) { background: -webkit-linear-gradient(top, rgba(132,132,132,.35) 0%, rgba(79,79,79,.35) 50%, rgba(40,40,40,.35) 50%, rgba(80,80,80,.35) 100%); }		.DESU_cfgTab:hover { background-color: rgba(99,99,99,.2); }		.DESU_cfgTab:hover:lang(en), .DESU_cfgTab:hover:lang(fr)  { background: -webkit-linear-gradient(bottom, rgba(132,132,132,.35) 0%, rgba(79,79,79,.35) 50%, rgba(40,40,40,.35) 50%, rgba(80,80,80,.35) 100%); }		.DESU_cfgTab_sel { border-bottom: none; }		#DESU_spellPanel { float: right; }		#DESU_spellPanel > a { padding: 0 7px; text-align: center; }#DESU_btnLogo { margin-right: 3px; }		#DESU_panel { height: 25px; z-index: 9999; border-radius: 15px 0 0 0; cursor: default;}		#DESU_panelBtns { display: inline-block; padding: 0 2px; margin: 0; height: 25px; border-left: 1px solid #8fbbed; }		#DESU_panelBtns:lang(ru), #DESU_panelInfo:lang(ru) { border-color: #79c; }		#DESU_panelBtns:lang(de), #DESU_panelInfo:lang(de) { border-color: #ccc; }		#DESU_panelBtns:lang(fr), #DESU_panelInfo:lang(fr) { border-color: #616b86; }		#DESU_panelBtns > li { margin: 0 1px; padding: 0; }		#DESU_panelBtns > li, #DESU_panelBtns > li > a, #DESU_btnLogo { display: inline-block; width: 25px; height: 25px; }		#DESU_panelBtns:lang(en) > li, #DESU_panelBtns:lang(fr) > li  { -webkit-transition: all 0.3s ease; }		#DESU_panelBtns:lang(en) > li:hover, #DESU_panelBtns:lang(fr) > li:hover { background-color: rgba(255,255,255,.15); box-shadow: 0 0 3px rgba(143,187,237,.5); }		#DESU_panelBtns:lang(ru) > li > a, #DESU_panelBtns:lang(de) > li > a { border-radius: 5px; }		#DESU_panelBtns:lang(ru) > li > a:hover { width: 21px; height: 21px; border: 2px solid #9be; }		#DESU_panelBtns:lang(de) > li > a:hover { width: 21px; height: 21px; border: 2px solid #444; }		#DESU_panelInfo { display: inline-block; vertical-align: top; padding: 0 6px; height: 25px; border-left: 1px solid #8fbbed; color: #fff; font: 18px serif; }#DESU_btnLogo { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAI5jI+pywEPWoIIRomz3tN6K30ixZXM+HCgtjpk1rbmTNc0erHvLOt4vvj1KqnD8FQ0HIPCpbIJtB0KADs=) no-repeat center !important; }#DESU_btnSettings { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAJAjI+pa+API0Mv1Ymz3hYuiQHHFYjcOZmlM3Jkw4aeAn7R/aL6zuu5VpH8aMJaKtZR2ZBEZnMJLM5kIqnP2csUAAA7) no-repeat center !important; }#DESU_btnHidden { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAI5jI+pa+CeHmRHgmCp3rxvO3WhMnomUqIXl2UmuLJSNJ/2jed4Tad96JLBbsEXLPbhFRc8lU8HTRQAADs=) no-repeat center !important; }#DESU_btnFavor { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAIzjI+py+AMjZs02ovzobzb1wDaeIkkwp3dpLEoeMbynJmzG6fYysNh3+IFWbqPb3OkKRUFADs=) no-repeat center !important; }#DESU_btnRefresh { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAJAjI+pe+AfHmRGLkuz3rzN+1HS2JWbhWlpVIXJ+roxSpr2jedOBIu0rKjxhEFgawcCqJBFZlPJIA6d0ZH01MtRCgA7) no-repeat center !important; }#DESU_btnGoBack { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAIrjI+pmwAMm4u02gud3lzjD4biJgbd6VVPybbua61lGqIoY98ZPcvwD4QUAAA7) no-repeat center !important; }#DESU_btnGoNext { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAIrjI+pywjQonuy2iuf3lzjD4Zis0Xd6YnQyLbua61tSqJnbXcqHVLwD0QUAAA7) no-repeat center !important; }#DESU_btnGoUp { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAIsjI+pm+DvmDRw2ouzrbq9DmKcBpVfN4ZpyLYuCbgmaK7iydpw1OqZf+O9LgUAOw==) no-repeat center !important; }#DESU_btnGoDown { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAItjI+pu+DA4ps02osznrq9DnZceIxkYILUd7bue6WhrLInLdokHq96tnI5YJoCADs=) no-repeat center !important; }#DESU_btnNewThr { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAIyjI+pG+APQYMsWsuy3rzeLy2g05XcGJqqgmJiS63yTHtgLaPTY8Np4uO9gj0YbqM7bgoAOw==) no-repeat center !important; }#DESU_btnExpImg { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAI9jI+pGwDn4GPL2Wep3rxXFEFel42mBE6kcYXqFqYnVc72jTPtS/KNr5OJOJMdq4diAXWvS065NNVwseehAAA7) no-repeat center !important; }#DESU_btnMaskImg { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAJQjI+pGwD3TGxtJgezrKz7DzLYRlKj4qTqmoYuysbtgk02ZCG1Rkk53gvafq+i8QiSxTozIY7IcZJOl9PNBx1de1Sdldeslq7dJ9gsUq6QnwIAOw==) no-repeat center !important; }#DESU_btnAudioOff { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAI7jI+pq+DO1psvQHOj3rxTik1dCIzmSZqfmGXIWlkiB6L2jedhPqOfCitVYolgKcUwyoQuSe3WwzV1kQIAOw==) no-repeat center !important; }#DESU_btnAudioOn { background: url(data:image/gif;base64,R0lGODlhGQAZAIAAAPDw8P///yH5BAEAAAEALAAAAAAZABkAQAJHjI+pq+AewJHs2WdoZLz7X11WRkEgNoHqimadOG7uAqOm+Y6atvb+D0TgfjHS6RIp8YQ1pbHRfA4n0eSTI7JqP8Wtahr0FAAAOw==) no-repeat center !important; }#DESU_btnUpdOn { background: url(data:image/gif;base64,R0lGODlhGQAZAJEAADL/MvDw8P///wAAACH5BAEAAAIALAAAAAAZABkAQAJElI+pe2EBoxOTNYmr3bz7OwHiCDzQh6bq06QSCUhcZMCmNrfrzvf+XsF1MpjhCSainBg0AbKkFCJko6g0MSGyftwuowAAOw==) no-repeat center !important; }#DESU_btnUpdOff { background: url(data:image/gif;base64,R0lGODlhGQAZAJEAAP8yMvDw8P///wAAACH5BAEAAAIALAAAAAAZABkAQAJElI+pe2EBoxOTNYmr3bz7OwHiCDzQh6bq06QSCUhcZMCmNrfrzvf+XsF1MpjhCSainBg0AbKkFCJko6g0MSGyftwuowAAOw==) no-repeat center !important; }#DESU_btnUpdWarn { background: url(data:image/gif;base64,R0lGODlhGQAZAJEAAP/0QfDw8P///wAAACH5BAEAAAIALAAAAAAZABkAQAJElI+pe2EBoxOTNYmr3bz7OwHiCDzQh6bq06QSCUhcZMCmNrfrzvf+XsF1MpjhCSainBg0AbKkFCJko6g0MSGyftwuowAAOw==) no-repeat center !important; }.DESU_postPanel, .DESU_postPanel_op, .DESU_postPanel_del { margin-left: 4px; }		.DESU_btnHide, .DESU_btnUnhide, .DESU_btnRep, .DESU_btnExpthr, .DESU_btnFav, .DESU_btnFavSel, .DESU_btnSage, .DESU_btnSrc { display: inline-block; margin: 0 4px -2px 0 !important; cursor: pointer; padding: 0 14px 14px 0; }.DESU_btnHide { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM8SLLcS2MNQGsUMYi6uB5BKI5hFgojel5YBbDDNcmvpJLkcgLq1jcuSgPmgkUmlJgFAyqNmoEBJEatxggJADs=) no-repeat center !important; }.DESU_btnUnhide { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM5SLLcS2ONCcCMIoYdRBVcN4Qkp4ULmWVV20ZTM1SYBJbqvXmA3jk8IMzlgtVYFtkoNCENIJdolJAAADs=) no-repeat center !important; }.DESU_btnRep { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM4SLLcS2MNQGsUMQRRwdLbAI5kpn1kKHUWdk3AcDFmOqKcJ5AOq0srX0QWpBAlIo3MNoDInlAZIQEAOw==) no-repeat center !important; }.DESU_btnExpthr { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM7SLLcS6MNACKLIQjKgcjCkI2DOAbYuHlnKFHWUl5dnKpfm2vd7iyUXywEk1gmnYrMlEEyUZCSdFoiJAAAOw==) no-repeat center !important; }.DESU_btnFav { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM5SLLcS2MNQGsUl1XgRvhg+EWhQAllNG0WplLXqqIlDS7lWZvsJkm92Au2Aqg8gQFyhBxAlNCokpAAADs=) no-repeat center !important; }.DESU_btnFavSel { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAP/hAKCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM5SLLcS2MNQGsUl1XgRvhg+EWhQAllNG0WplLXqqIlDS7lWZvsJkm92Au2Aqg8gQFyhBxAlNCokpAAADs=) no-repeat center !important; }.DESU_btnSage { background: url(data:image/gif;base64,R0lGODlhDgAOAJEAAPDw8EtLS////wAAACH5BAEAAAIALAAAAAAOAA4AQAIZVI55duDvFIKy2vluoJfrD4Yi5lWRwmhCAQA7) no-repeat center !important; }.DESU_btnSrc { background: url(data:image/gif;base64,R0lGODlhDgAOAKIAAPDw8KCgoICAgEtLS////wAAAAAAAAAAACH5BAEAAAQALAAAAAAOAA4AQAM9SLLcS0MMQMesUoQg6PKbtFnDaI0a53VAml2ARcVSFC0WY6ecyy+hFajnWDVssyQtB5NhTs1mYAAhWa2EBAA7) no-repeat center !important; }.DESU_srcGoogle:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(//google.ru/favicon.ico) no-repeat center; }.DESU_srcTineye:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(//tineye.com/favicon.ico) no-repeat center; }.DESU_srcIqdb:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(//iqdb.org/favicon.ico) no-repeat center; }.DESU_srcSaucenao:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(//saucenao.com/favicon.ico) no-repeat center; }.DESU_thread { counter-reset: i 1; }		.DESU_postPanel:after { counter-increment: i 1; content: counter(i, decimal); vertical-align: 1px; color: #4f7942; font: italic bold 13px serif; cursor: default; }		.DESU_postPanel_del:after { content: "удалён"; color: #727579; font: italic bold 13px serif; cursor: default; }#DESU_txtPanel { display: block; height: 23px; font-weight: bold; cursor: pointer; }		#DESU_txtPanel > span:empty { display: inline-block; width: 27px; height: 23px }		#DESU_txtPanel:lang(en) { display: none; }		#DESU_txtPanel:lang(ru) { float: right; }#DESU_btnBold:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJT3IKpq4YAoZgR0KqqnfzipIUikFWc6ZHBwbQtG4zyonW2Vkb2iYOo8Ps8ZLOV69gYEkU5yQ7YUzqhzmgsOLXWnlRIc9PleX06rnbJ/KITDqTLUAAAOw==) no-repeat center !important; }#DESU_btnItalic:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJK3IKpq4YAYxRCSmUhzTfx3z3c9iEHg6JnAJYYSFpvRlXcLNUg3srBmgr+RL0MzxILsYpGzyepfEIjR43t5kResUQmtdpKOIQpQwEAOw==) no-repeat center !important; }#DESU_btnUnder:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJV3IKpq4YAoRARzAoV3hzoDnoJNlGSWSEHw7JrEHILiVp1NlZXtKe5XiptPrFh4NVKHh9FI5NX60WIJ6ATZoVeaVnf8xSU4r7NMRYcFk6pzYRD2TIUAAA7) no-repeat center !important; }#DESU_btnStrike:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJS3IKpq4YAoRBR0qqqnVeD7IUaKHIecjCqmgbiu3jcfCbAjOfTZ0fmVnu8YIHW6lgUDkOkCo7Z8+2AmCiVqHTSgi6pZlrN3nJQ8TISO4cdyJWhAAA7) no-repeat center !important; }#DESU_btnSpoil:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZP///wAAACH5BAEAAAIALAAAAAAXABYAQAJBlIKpq4YAmHwxwYtzVrprXk0LhBziGZiBx44hur4kTIGsZ99fSk+mjrMAd7XerEg7xnpLIVM5JMaiFxc14WBiBQUAOw==) no-repeat center !important; }#DESU_btnCode:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJO3IKpq4YAoZgR0KpqnFxokH2iFm7eGCEHw7JrgI6L2F1YotloKek6iIvJAq+WkfgQinjKVLBS45CePSXzt6RaTjHmNjpNNm9aq6p4XBgKADs=) no-repeat center !important; }#DESU_btnQuote:empty { background: url(data:image/gif;base64,R0lGODlhFwAWAJEAAPDw8GRkZAAAAP///yH5BAEAAAMALAAAAAAXABYAQAJL3IKpq4YAYxRUSKguvRzkDkZfWFlicDCqmgYhuGjVO74zlnQlnL98uwqiHr5ODbDxHSE7Y490wxF90eUkepoysRxrMVaUJBzClaEAADs=) no-repeat center !important; }@-webkit-keyframes DESU_aOpen {				0% { -webkit-transform: translateY(-1500px); }				40% { -webkit-transform: translateY(30px); }				70% { -webkit-transform: translateY(-10px); }				100% { -webkit-transform: translateY(0); }			}			@-webkit-keyframes DESU_aClose {				0% { -webkit-transform: translateY(0); }				20% { -webkit-transform: translateY(20px); }				100% { -webkit-transform: translateY(-4000px); }			}			@-webkit-keyframes DESU_aBlink {				0%, 100% { -webkit-transform: translateX(0); }				10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); }				20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); }			}			@-webkit-keyframes DESU_cfgOpen { from { -webkit-transform: translate(0,50%) scaleY(0); opacity: 0; } }			@-webkit-keyframes DESU_cfgClose { to { -webkit-transform: translate(0,50%) scaleY(0); opacity: 0; } }			@-webkit-keyframes DESU_pOpenTL { from { -webkit-transform: translate(-50%,-50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pOpenBL { from { -webkit-transform: translate(-50%,50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pOpenTR { from { -webkit-transform: translate(50%,-50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pOpenBR { from { -webkit-transform: translate(50%,50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pCloseTL { to { -webkit-transform: translate(-50%,-50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pCloseBL { to { -webkit-transform: translate(-50%,50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pCloseTR { to { -webkit-transform: translate(50%,-50%) scale(0); opacity: 0; } }			@-webkit-keyframes DESU_pCloseBR { to { -webkit-transform: translate(50%,50%) scale(0); opacity: 0; } }			.DESU_pView { -webkit-animation-duration: .2s; -webkit-animation-timing-function: ease-in-out; -webkit-animation-fill-mode: both; }			.DESU_aOpen { -webkit-animation: DESU_aOpen .7s ease-out both; }			.DESU_aClose { -webkit-animation: DESU_aClose .7s ease-in both; }			.DESU_aBlink { -webkit-animation: DESU_aBlink .7s ease-in-out both; }			.DESU_cfgOpen { -webkit-animation: DESU_cfgOpen .2s ease-out backwards; }			.DESU_cfgClose { -webkit-animation: DESU_cfgClose .2s ease-in both; }.DESU_ytLink:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(//youtube.com/favicon.ico) no-repeat center; }.DESU_preImg, .DESU_fullImg { display: block; margin: 2px 10px; border: none; outline: none; cursor: pointer; }		.DESU_mp3, .DESU_ytObj { margin: 5px 20px; }		.DESU_ytObj > img { cursor: pointer; }.DESU_wait:before { content: ""; padding: 0 16px 0 0; margin: 0 4px; background: url(data:image/gif;base64,R0lGODlhEAAQALMMAKqooJGOhp2bk7e1rZ2bkre1rJCPhqqon8PBudDOxXd1bISCef///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAAMACwAAAAAEAAQAAAET5DJyYyhmAZ7sxQEs1nMsmACGJKmSaVEOLXnK1PuBADepCiMg/DQ+/2GRI8RKOxJfpTCIJNIYArS6aRajWYZCASDa41Ow+Fx2YMWOyfpTAQAIfkEBQAADAAsAAAAABAAEAAABE6QyckEoZgKe7MEQMUxhoEd6FFdQWlOqTq15SlT9VQM3rQsjMKO5/n9hANixgjc9SQ/CgKRUSgw0ynFapVmGYkEg3v1gsPibg8tfk7CnggAIfkEBQAADAAsAAAAABAAEAAABE2QycnOoZjaA/IsRWV1goCBoMiUJTW8A0XMBPZmM4Ug3hQEjN2uZygahDyP0RBMEpmTRCKzWGCkUkq1SsFOFQrG1tr9gsPc3jnco4A9EQAh+QQFAAAMACwAAAAAEAAQAAAETpDJyUqhmFqbJ0LMIA7McWDfF5LmAVApOLUvLFMmlSTdJAiM3a73+wl5HYKSEET2lBSFIhMIYKRSimFriGIZiwWD2/WCw+Jt7xxeU9qZCAAh+QQFAAAMACwAAAAAEAAQAAAETZDJyRCimFqbZ0rVxgwF9n3hSJbeSQ2rCWIkpSjddBzMfee7nQ/XCfJ+OQYAQFksMgQBxumkEKLSCfVpMDCugqyW2w18xZmuwZycdDsRACH5BAUAAAwALAAAAAAQABAAAARNkMnJUqKYWpunUtXGIAj2feFIlt5JrWybkdSydNNQMLaND7pC79YBFnY+HENHMRgyhwPGaQhQotGm00oQMLBSLYPQ9QIASrLAq5x0OxEAIfkEBQAADAAsAAAAABAAEAAABE2QycmUopham+da1cYkCfZ94UiW3kmtbJuRlGF0E4Iwto3rut6tA9wFAjiJjkIgZAYDTLNJgUIpgqyAcTgwCuACJssAdL3gpLmbpLAzEQA7) no-repeat center; }.DESU_alertBtn { display: inline-block; vertical-align: top; font-size: 150%; color: green; cursor: pointer; }		.DESU_alertMsg { display: inline-block; margin-top: .25em; }		#DESU_alertBox { position: fixed; right: 0; top: 0; z-index: 9999; font: 14px arial; cursor: default; }		#DESU_alertBox > div { float: right; clear: both; width: auto; min-width: 0pt; padding: 10px; margin: 1px; border: 1px solid grey; white-space: pre-wrap; }		.DESU_content textarea { display: block; margin: 2px 0; font: 12px courier new; }		.DESU_content { text-align: left; }		#DESU_contentFav, #DESU_contentHid { font-size: 16px; padding: 10px; border: 1px solid gray; }		.DESU_contData { margin: 2px 0; }		.DESU_contData > :first-child { float: none !important; }		.DESU_contData > div > a { text-decoration: none; }		.DESU_contHead > a { color: inherit; font-weight: bold; }		.DESU_favPCount { float: right; margin: 0 5px 0 15px; font: bold 16px serif; }		.DESU_favPCount span { color: #4f7942; }		#DESU_iframe { display: none; width: 0px; height: 0px; border: none; }		.DESU_omitted { color: grey; font-style: italic; }		.DESU_postNote { color: inherit; font: italic bold 12px serif; }		#DESU_qarea { float: none; clear: left; width: 100%; padding: 3px 0 3px 3px; margin: 2px 0; }		.DESU_refHid { text-decoration: line-through !important; }		.DESU_refMap { margin: 10px 4px 4px 4px; font-size: 70%; font-style: italic; }		.DESU_refMap:before { content: "Ответы: "; }		.DESU_refMap > a { text-decoration: none; }		#DESU_sageBtn { margin-right: 7px; cursor: pointer; }		#DESU_select { padding: 0 !important; margin: 0 !important; width: auto; min-width: 0; z-index: 9999; border: 1px solid grey;}		#DESU_select a { display: block; padding: 3px 10px; color: inherit; text-decoration: none; font: 13px arial; white-space: nowrap; }		#DESU_select a:hover { background-color: #222; color: #fff; }		.DESU_selected { box-shadow: 6px 0 2px -2px red, -6px 0 2px -2px red; }		#DESU_txtResizer { display: inline-block !important; float: none !important; padding: 5px; margin: 0 0 -2px -12px; border-bottom: 2px solid #555; border-right: 2px solid #444; cursor: se-resize; }		.DESU_viewed { color: #888 !important; }		.DESU_aBtn { text-decoration: none !important; outline: none; }		.DESU_pPost { font-weight: bold; }		.DESU_info { padding: 3px 6px !important; }		.DESU_pView { position: absolute; width: auto; min-width: 0; z-index: 9999; border: 1px solid grey; }		.DESU_cFullImg { position: fixed; z-index: 9999; border: 1px solid black; }		.DESU_archive:after { content: ""; padding: 0 16px 3px 0; margin: 0 4px; background: url(data:image/gif;base64,R0lGODlhEAAQALMAAF82SsxdwQMEP6+zzRA872NmZQesBylPHYBBHP///wAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAkALAAAAAAQABAAQARTMMlJaxqjiL2L51sGjCOCkGiBGWyLtC0KmPIoqUOg78i+ZwOCUOgpDIW3g3KJWC4t0ElBRqtdMr6AKRsA1qYy3JGgMR4xGpAAoRYkVDDWKx6NRgAAOw==) no-repeat center; }		small[id^="rfmap"], div[id^="preview"], div[id^="pstprev"] { display: none !important; }		textarea { resize: none !important; }.extrabtns, .ui-resizable-handle { display: none !important; }			.ui-wrapper { display: inline-block; width: auto !important; height: auto !important; padding: 0 !important; }</style><style id="DESU_dynCss" type="text/css">#DESU_panel { position: fixed; right: 0; bottom: 0; }		.DESU_content { position: fixed; right: 0; bottom: 25px; z-index: 9999; max-height: 95%; overflow-x: visible; overflow-y: auto; }		.DESU_content > table { padding: 5px 10px; border: 1px solid grey; }.spoiler, .DESU_spoiler { background: #888 !important; color: #ccc !important; }blockquote, blockquote > p, .code_part { max-height: 100% !important; overflow: visible !important; }.rules, #rules, #rules_row { display: none; }</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body>
+<div class="adminbar">
+[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" onclick="javascript:set_stylesheet(&#39;Burichan&#39;);return false;">Burichan</a>]&nbsp;[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" onclick="javascript:set_stylesheet(&#39;Futaba&#39;);return false;">Futaba</a>]&nbsp;[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" onclick="javascript:set_stylesheet(&#39;Neutron&#39;);return false;">Neutron</a>]&nbsp;[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" onclick="javascript:set_stylesheet(&#39;Photon&#39;);return false;">Photon</a>]&nbsp;
+
+-&nbsp;
+
+[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" onclick="javascript:showwatchedthreads();return false" title="Watched Threads">WT</a>]&nbsp;
+[<a href="http://hiddenchan.i2p/" target="_top">Домой</a>]&nbsp;[<a href="http://hiddenchan.i2p/manage.php" target="_top">Управление</a>]
+</div>
+<div class="navbar">
+[
+<a title="random" href="http://hiddenchan.i2p/b/">b</a> / 
+<a title="random relaxed" href="http://hiddenchan.i2p/b2/">b2</a> / 
+<a title="board discuss" href="http://hiddenchan.i2p/d/">d</a> / 
+<a title="international" href="http://hiddenchan.i2p/int/">int</a> / 
+<a title="politics" href="http://hiddenchan.i2p/pol/">pol</a> / 
+<a title="test" href="http://hiddenchan.i2p/t/">t</a> / 
+<a title="wall of text" href="http://hiddenchan.i2p/txt/">txt</a>
+
+ ]
+[
+<a title="i2p internals" href="http://hiddenchan.i2p/i2p/">i2p</a> / 
+<a title="coding" href="http://hiddenchan.i2p/c/">c</a> / 
+<a title="software" href="http://hiddenchan.i2p/s/">s</a> / 
+<a title="invasion" href="http://hiddenchan.i2p/i/">i</a>
+
+ ]
+[
+<a title="central processors" href="http://hiddenchan.i2p/cp/">cp</a> / 
+<a title="girls non-cp" href="http://hiddenchan.i2p/g/">g</a> / 
+<a title="hentai" href="http://hiddenchan.i2p/h/">h</a>
+
+ ]
+[
+<a title="anime" href="http://hiddenchan.i2p/a/">a</a> / 
+<a title="medicine" href="http://hiddenchan.i2p/med/">med</a> / 
+<a title="criminal activities" href="http://hiddenchan.i2p/cri/">cri</a> / 
+<a title="exchange" href="http://hiddenchan.i2p/e/">e</a> / 
+<a title="music" href="http://hiddenchan.i2p/mu/">mu</a> / 
+<a title="science" href="http://hiddenchan.i2p/sci/">sci</a> / 
+<a title="videogames" href="http://hiddenchan.i2p/vg/">vg</a> / 
+<a title="books" href="http://hiddenchan.i2p/bo/">bo</a> / 
+<a title="end of world" href="http://hiddenchan.i2p/ew/">ew</a> / 
+<a title="painting" href="http://hiddenchan.i2p/pa/">pa</a> / 
+<a title="television" href="http://hiddenchan.i2p/tv/">tv</a>
+
+ ]
+
+
+</div>
+<script type="text/javascript"><!--
+if (getCookie('showwatchedthreads') == '1') {
+document.write('<div id="watchedthreads" style="top: 235px; left: 25px;" class="watchedthreads"><div class="postblock" id="watchedthreadsdraghandle" style="width: 100%;">Watched Threads<\/div><span id="watchedthreadlist"><\/span><div id="watchedthreadsbuttons"><a href="#" onclick="javascript:hidewatchedthreads();return false;" title="Hide the watched threads box"><img src="http://hiddenchan.i2p/css/icons/blank.gif" border="0" class="hidewatchedthreads" alt="hide" /><\/a>&nbsp;<a href="#" onclick="javascript:getwatchedthreads(\'0\', \'i2p\');return false;" title="Refresh watched threads"><img src="http://hiddenchan.i2p/css/icons/blank.gif" border="0" class="refreshwatchedthreads" alt="refresh" /><\/a><\/div><\/div>');
+watchedthreadselement = document.getElementById('watchedthreads');
+watchedthreadselement.style.top = getCookie('watchedthreadstop');
+watchedthreadselement.style.left = getCookie('watchedthreadsleft');
+watchedthreadselement.style.width = Math.max(250,getCookie('watchedthreadswidth')) + 'px';
+watchedthreadselement.style.height = Math.max(75,getCookie('watchedthreadsheight')) + 'px';
+getwatchedthreads('5465', 'i2p');
+}
+//--></script>
+
+
+<div class="logo">
+
+/i2p/ - 
+
+i2p internals</div><div id="DESU_panelStuff" lang="fr"><div style="clear:both;"></div><div id="DESU_panel"><span id="DESU_btnLogo" style="cursor: pointer"></span><ul id="DESU_panelBtns"><li><a id="DESU_btnSettings" class="DESU_aBtn" title="Настройки" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnHidden" class="DESU_aBtn" title="Скрытое" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnFavor" class="DESU_aBtn" title="Избранное" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnRefresh" class="DESU_aBtn" title="Обновить" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="DESU_delSelection(event)"></a></li><li><a id="DESU_btnGoBack" class="DESU_aBtn" title="Назад" href="http://hiddenchan.i2p/i2p/" onmouseout="null"></a></li><li><a id="DESU_btnGoUp" class="DESU_aBtn" title="Наверх" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnGoDown" class="DESU_aBtn" title="В конец" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnExpImg" class="DESU_aBtn" title="Раскрыть картинки" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnMaskImg" class="DESU_aBtn" title="Маскировать картинки" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnUpdOn" class="DESU_aBtn" title="Автообновление треда" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="null"></a></li><li><a id="DESU_btnAudioOff" class="DESU_aBtn" title="Звуковое оповещение о новых постах" href="http://hiddenchan.i2p/i2p/res/5465.html#" onmouseout="DESU_delSelection(event)"></a></li></ul><div id="DESU_panelInfo"><span title="Постов/Изображений в треде">87/11</span></div></div><div class="DESU_content"></div><div id="DESU_alertBox"></div><hr style="clear: both;"></div><center id="DESU_parea" style="display: none;"><div id="DESU_toggleReply" style="display: none;">[<a href="http://hiddenchan.i2p/i2p/res/5465.html#" class="DESU_aBtn">Раскрыть форму</a>]</div><div id="DESU_pform"><form name="postform" id="postform" action="http://hiddenchan.i2p/board.php" method="post" enctype="multipart/form-data" style="display: inline-block; text-align: left;">
+<input type="hidden" name="board" value="i2p">
+<input type="hidden" name="replythread" value="5465">
+<input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+
+<input type="text" name="email" size="35" maxlength="75" value="" style="display: none;">
+<table class="postform">
+<tbody>
+<tr>
+<td class="postblock">
+Имя</td>
+<td>
+<input type="text" name="name" size="35" maxlength="75" accesskey="n"><span id="DESU_sageBtn">&nbsp;<i>(no&nbsp;sage)</i></span>
+</td>
+</tr>
+
+<tr style="display: none;">
+<td class="postblock">
+Email</td>
+<td>
+<input type="text" name="em" size="35" maxlength="75" accesskey="e">
+</td>
+</tr>
+
+<tr>
+<td class="postblock">
+Тема
+</td>
+<td>
+<input type="text" name="subject" size="35" maxlength="75" accesskey="s">&nbsp;<input type="submit" value="Ответить" accesskey="z"><span id="DESU_txtPanel" lang="ru"><span id="DESU_btnBold" title="Жирный"></span><span id="DESU_btnItalic" title="Наклонный"></span><span id="DESU_btnUnder" title="Подчеркнутый"></span><span id="DESU_btnStrike" title="Зачеркнутый"></span><span id="DESU_btnSpoil" title="Спойлер"></span><span id="DESU_btnCode" title="Код"></span><span id="DESU_btnQuote" title="Цитировать выделенное"></span></span>&nbsp;(<span id="posttypeindicator">reply to 5465</span>)
+</td>
+</tr>
+<tr>
+<td class="postblock">
+Сообщение
+</td>
+<td>
+<textarea name="message" cols="68" rows="8" accesskey="m" style="width: 540px; height: 140px;"></textarea><div id="DESU_txtResizer"></div>
+</td>
+</tr>
+<tr>
+<td class="postblock">
+Файл
+</td>
+<td>
+<input type="file" name="imagefile" size="35" accesskey="f">
+
+</td>
+</tr>
+
+
+<tr style="display: none;">
+<td class="postblock">
+Пароль
+</td>
+<td>
+<input type="password" name="postpassword" size="8" accesskey="p">&nbsp;(для удаления сообщений и файлов)
+</td>
+</tr>
+<tr style="display: none;"><td class="postblock">
+К треду
+</td>
+<td>
+<input id="gotothread" type="checkbox" name="gotothread" value="off">&nbsp;(после отправки сообщения переместиться к треду)
+</td>
+
+</tr>
+<tr id="passwordbox"><td></td><td></td></tr>
+<tr>
+<td colspan="2" class="rules">
+<ul style="margin-left: 0; margin-top: 0; margin-bottom: 0; padding-left: 0;">
+<li>Поддерживаемые форматы файлов:
+GIF, 
+JPG, 
+PATCH, 
+PNG
+
+
+</li>
+<li>Максимальный размер файла 4096 KB.</li>
+<li>Картинки более чем 200x200 будут уменьшены.</li>
+ 
+<li>
+<a href="http://hiddenchan.i2p/i2p/catalog.html">Просмотр каталога</a>
+</li>
+
+</ul>
+
+</td>
+</tr>
+</tbody>
+
+</table>
+</form></div><hr></center><div id="DESU_qarea" class="reply" style="display: none;"></div><form id="" action="http://hiddenchan.i2p/board.php" method="post" style="">
+<input type="hidden" name="board" value="i2p">
+
+
+<div id="thread5465i2p" class=" DESU_thread"><div desu-post="5465">
+<a name="s"></a>
+
+<span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/137485560356.jpg">
+
+137485560356.jpg</a>
+
+- (103.31KB
+
+, 250x250)
+
+
+
+</span>
+
+<br>
+
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/137485560356.jpg" onclick="javascript:expandimg(&#39;5465&#39;, &#39;http://hiddenchan.i2p/i2p/src/137485560356.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/137485560356s.jpg&#39;, &#39;250&#39;, &#39;250&#39;, &#39;200&#39;, &#39;200&#39;);return false;">
+<span id="thumb5465"><img src="./ i2p - Распределенная имиджборда в I2P_files/137485560356s.jpg" alt="5465" class="thumb" height="200" width="200"></span>
+</a>
+
+
+<a name="5465"></a>
+<label>
+<input type="checkbox" name="post[]" value="5465">
+<span class="filetitle">
+Распределенная имиджборда в I2P
+</span>
+
+<span class="postername">Anonymous</span>
+
+26.07.2013 (Fri) 20:20:03
+</label>
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5465" onclick="return highlight(&#39;5465&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5465" onclick="return insert(&#39;&gt;&gt;5465\n&#39;);">5465</a>
+
+</span><span class="DESU_postPanel_op" info="5465"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span><span class="DESU_btnFav" onclick="DESU_favorClick(this)"></span></span>
+<span id="dnb-i2p-5465-y"></span>
+<br>
+
+
+<blockquote>
+
+
+<i>Влажных фантазий тред.</i>
+<br>
+Когда Хиддач лежал, на двенадцать-чане говорили что давно пора бы сделать нечто подобное.
+<br>
+
+<br>
+Как я себе это представляю: 
+<br>
+легковесная программа-клиент имеет ядро и информацию треды/посты ("контент") и постоянно держит связь с другими участниками по DHT. Когда юзер хочет отправить пост, он совершает "коммит" (как в github) над частью "контент", который моментально скачивается другими участниками, и они могут увидеть новый пост. Таким образом, каждый пользователь дообновляется, получая посты. Также хорошо бы определиться с точным временем, для правильного иерархического расположения постов.
+<br>
+
+<br>
+Если кто-то решит это реализовать, то можно сначала сделать простую текстовую борду на подобии футабы. Это будет проще, ведь текстовый пост не будет весит больше пары килобайт. Обычно, даже под самым суровым НАТом снарк выдает 3-4 кб/с, чего вполне хватит.
+<br>
+P.S: Извините, если коряво написал.<br>
+
+
+</blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#top" onclick="javascript:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+expandimg(&#39;6185&#39;, &#39;http://hiddenchan.i2p/i2p/src/138031380138.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138031380138s.jpg&#39;, &#39;1053&#39;, &#39;842&#39;, &#39;200&#39;, &#39;160&#39;);
+
+
+
+
+
+
+
+
+
+
+
+
+expandimg(&#39;6245&#39;, &#39;http://hiddenchan.i2p/i2p/src/138089852779.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138089852779s.png&#39;, &#39;436&#39;, &#39;435&#39;, &#39;200&#39;, &#39;200&#39;);
+
+
+
+
+
+
+
+
+expandimg(&#39;6279&#39;, &#39;http://hiddenchan.i2p/i2p/src/138135170253.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138135170253s.jpg&#39;, &#39;630&#39;, &#39;415&#39;, &#39;200&#39;, &#39;132&#39;);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+expandimg(&#39;6348&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160070221.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160070221s.png&#39;, &#39;370&#39;, &#39;340&#39;, &#39;200&#39;, &#39;184&#39;);
+
+
+expandimg(&#39;6349&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160246096.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160246096s.png&#39;, &#39;851&#39;, &#39;446&#39;, &#39;200&#39;, &#39;105&#39;);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+expandimg(&#39;6527&#39;, &#39;http://hiddenchan.i2p/i2p/src/138355604697.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138355604697s.jpg&#39;, &#39;360&#39;, &#39;270&#39;, &#39;200&#39;, &#39;150&#39;);
+
+
+
+
+
+
+
+
+expandimg(&#39;6542&#39;, &#39;http://hiddenchan.i2p/i2p/src/138365062765.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138365062765s.png&#39;, &#39;974&#39;, &#39;1057&#39;, &#39;184&#39;, &#39;200&#39;);
+
+
+
+
+
+
+
+
+
+
+expandimg(&#39;6554&#39;, &#39;http://hiddenchan.i2p/i2p/src/138381111986.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138381111986s.png&#39;, &#39;831&#39;, &#39;1058&#39;, &#39;157&#39;, &#39;200&#39;);
+
+
+expandimg(&#39;6628&#39;, &#39;http://hiddenchan.i2p/i2p/src/138445338489.gif&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138445338489s.gif&#39;, &#39;216&#39;, &#39;323&#39;, &#39;134&#39;, &#39;200&#39;);
+
+
+expandimg(&#39;6634&#39;, &#39;http://hiddenchan.i2p/i2p/src/138453686482.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138453686482s.jpg&#39;, &#39;500&#39;, &#39;446&#39;, &#39;200&#39;, &#39;178&#39;);
+
+
+
+
+
+return false;">Развернуть все изображения</a>
+
+
+
+
+
+</div><table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5466" desu-post="5466">
+<a name="5466"></a>
+<label>
+<input type="checkbox" name="post[]" value="5466">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.07.2013 (Fri) 20:21:29
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5466" onclick="return highlight(&#39;5466&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5466" onclick="return insert(&#39;&gt;&gt;5466\n&#39;);">5466</a>
+
+</span><span class="DESU_postPanel" info="5466"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5466-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+UPD: только что нашел <a href="https://github.com/tslocum/p2pchan">https://github.com/tslocum/p2pchan</a>
+<br>
+Кто-нибудь глянет?<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5467" desu-post="5467">
+<a name="5467"></a>
+<label>
+<input type="checkbox" name="post[]" value="5467">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.07.2013 (Fri) 20:35:34
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5467" onclick="return highlight(&#39;5467&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5467" onclick="return insert(&#39;&gt;&gt;5467\n&#39;);">5467</a>
+
+</span><span class="DESU_postPanel" info="5467"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5467-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Все уже придуманно и реализованно.
+<br>
+
+<br>
+В I2P это называется syndie.
+<br>
+<a href="http://www.syndie.i2p/">http://www.syndie.i2p</a>
+<br>
+
+<br>
+во freenet это frost.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5469" desu-post="5469">
+<a name="5469"></a>
+<label>
+<input type="checkbox" name="post[]" value="5469">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.07.2013 (Fri) 21:14:17
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5469" onclick="return highlight(&#39;5469&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5469" onclick="return insert(&#39;&gt;&gt;5469\n&#39;);">5469</a>
+
+</span><span class="DESU_postPanel" info="5469"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5469-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Установил, посмотрел. <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">Впечатление, будто это переделанный биткоин-кошелек</span>
+<br>
+
+<br>
+Извини, но Syndie даже близко не стоит с текстовой бордой по комфорту, простоте и скорости. Более того, функции, вложенные в синди, здесь не нужны.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5470" desu-post="5470">
+<a name="5470"></a>
+<label>
+<input type="checkbox" name="post[]" value="5470">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.07.2013 (Fri) 21:35:01
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5470" onclick="return highlight(&#39;5470&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5470" onclick="return insert(&#39;&gt;&gt;5470\n&#39;);">5470</a>
+
+</span><span class="DESU_postPanel" info="5470"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5470-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+frost круче, да. Но там сама специфика freenet как большого распределенного хранилища решает. Только <i>медленно</i> все.
+<br>
+Вроде, на момент заката двача там даже была небольшая борда с двумя анонимусами.
+<br>
+
+<br>
+а вообще можно поебаться и запилить. надо подумать.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5474">&gt;&gt;5474</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5474" desu-post="5474">
+<a name="5474"></a>
+<label>
+<input type="checkbox" name="post[]" value="5474">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.07.2013 (Sat) 12:22:24
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5474" onclick="return highlight(&#39;5474&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5474" onclick="return insert(&#39;&gt;&gt;5474\n&#39;);">5474</a>
+
+</span><span class="DESU_postPanel" info="5474"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5474-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5470" onclick="return highlight(&#39;5470&#39;, true);" class="ref|i2p|5465|5470">&gt;&gt;5470</a>
+<br>
+В конце концов, есть же приложение Nightweb - социалочка, работающая через Снарк на Андроидо-телефонах (!) <a href="http://zzz.i2p/topics/1360">http://zzz.i2p/topics/1360</a>
+<br>
+
+<br>
+Так что, одностраничную борду (типа кареха) сделать не должно быть трудно.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5487" desu-post="5487">
+<a name="5487"></a>
+<label>
+<input type="checkbox" name="post[]" value="5487">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.07.2013 (Sat) 21:14:01
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5487" onclick="return highlight(&#39;5487&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5487" onclick="return insert(&#39;&gt;&gt;5487\n&#39;);">5487</a>
+
+</span><span class="DESU_postPanel" info="5487"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5487-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Нужно сохранить анонимность, но защитить сеть от вайпа (через капчу, например).
+<br>
+Так что syndie, frost или freetalk — не вариант.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5537">&gt;&gt;5537</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5537" desu-post="5537">
+<a name="5537"></a>
+<label>
+<input type="checkbox" name="post[]" value="5537">
+
+
+
+<span class="postername">Anonymous</span>
+
+30.07.2013 (Tue) 15:56:22
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5537" onclick="return highlight(&#39;5537&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5537" onclick="return insert(&#39;&gt;&gt;5537\n&#39;);">5537</a>
+
+</span><span class="DESU_postPanel" info="5537"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5537-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5487" onclick="return highlight(&#39;5487&#39;, true);" class="ref|i2p|5465|5487">&gt;&gt;5487</a>
+<br>
+Ололо, распределённая капча! Ты упорот?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5540">&gt;&gt;5540</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5540" desu-post="5540">
+<a name="5540"></a>
+<label>
+<input type="checkbox" name="post[]" value="5540">
+
+
+
+<span class="postername">Anonymous</span>
+
+30.07.2013 (Tue) 17:10:51
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5540" onclick="return highlight(&#39;5540&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5540" onclick="return insert(&#39;&gt;&gt;5540\n&#39;);">5540</a>
+
+</span><span class="DESU_postPanel" info="5540"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5540-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5537" onclick="return highlight(&#39;5537&#39;, true);" class="ref|i2p|5465|5537">&gt;&gt;5537</a>
+<br>
+В фритолке уже есть. У тебя какие-то возражения против распределённой капчи?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5542">&gt;&gt;5542</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5542" desu-post="5542">
+<a name="5542"></a>
+<label>
+<input type="checkbox" name="post[]" value="5542">
+
+
+
+<span class="postername">Anonymous</span>
+
+30.07.2013 (Tue) 17:18:49
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5542" onclick="return highlight(&#39;5542&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5542" onclick="return insert(&#39;&gt;&gt;5542\n&#39;);">5542</a>
+
+</span><span class="DESU_postPanel" info="5542"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5542-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5540" onclick="return highlight(&#39;5540&#39;, true);" class="ref|i2p|5465|5540">&gt;&gt;5540</a>
+<br>
+Кто будет для тебя её генерировать и контролировать, если все равноправны? Кто помешает тебе на неё насрать или сэмулировать два клиента, один из которых сгенерировал капчу, а другой, типа, её прошёл? Кто тебе помешает саботировать систему, давая нерешаемые капчи или не принимая верные ответы на неё?<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5776" desu-post="5776">
+<a name="5776"></a>
+<label>
+<input type="checkbox" name="post[]" value="5776">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.08.2013 (Tue) 17:32:25
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5776" onclick="return highlight(&#39;5776&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5776" onclick="return insert(&#39;&gt;&gt;5776\n&#39;);">5776</a>
+
+</span><span class="DESU_postPanel" info="5776"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5776-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Бамп насущной проблеме.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5786">&gt;&gt;5786</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5786" desu-post="5786">
+<a name="5786"></a>
+<label>
+<input type="checkbox" name="post[]" value="5786">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.08.2013 (Wed) 13:18:44
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5786" onclick="return highlight(&#39;5786&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5786" onclick="return insert(&#39;&gt;&gt;5786\n&#39;);">5786</a>
+
+</span><span class="DESU_postPanel" info="5786"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5786-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5776" onclick="return highlight(&#39;5776&#39;, true);" class="ref|i2p|5465|5776">&gt;&gt;5776</a>
+<br>
+Анон, бампать смысла нет: кроме меня и тебя это все равно никто не напишет.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5788">&gt;&gt;5788</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5788" desu-post="5788">
+<a name="5788"></a>
+<label>
+<input type="checkbox" name="post[]" value="5788">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.08.2013 (Wed) 19:07:57
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5788" onclick="return highlight(&#39;5788&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5788" onclick="return insert(&#39;&gt;&gt;5788\n&#39;);">5788</a>
+
+</span><span class="DESU_postPanel" info="5788"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5788-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5786" onclick="return highlight(&#39;5786&#39;, true);" class="ref|i2p|5465|5786">&gt;&gt;5786</a>
+<br>
+<span class="unkfunc">&gt;кроме меня и тебя это все равно никто не напишет.
+</span><br>
+И то вряд ли. Пока можно "топологию" додумывать, возможно ктоо-нибудь чего додумает.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5869" desu-post="5869">
+<a name="5869"></a>
+<label>
+<input type="checkbox" name="post[]" value="5869">
+
+
+
+<span class="postername">Anonymous</span>
+
+24.08.2013 (Sat) 18:18:48
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5869" onclick="return highlight(&#39;5869&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5869" onclick="return insert(&#39;&gt;&gt;5869\n&#39;);">5869</a>
+
+</span><span class="DESU_postPanel" info="5869"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5869-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://fpl.i2p/">http://fpl.i2p</a>
+<br>
+и обсуждение на forum.i2p <a href="http://forum.i2p/viewtopic.php?t=10669&postdays=0&postorder=asc&start=0">http://forum.i2p/viewtopic.php?t=10669&amp;postdays=0&amp;postorder=asc&amp;start=0</a><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5879">&gt;&gt;5879</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#5911">&gt;&gt;5911</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5879" desu-post="5879">
+<a name="5879"></a>
+<label>
+<input type="checkbox" name="post[]" value="5879">
+
+
+
+<span class="postername">Anonymous</span>
+
+25.08.2013 (Sun) 12:14:31
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5879" onclick="return highlight(&#39;5879&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5879" onclick="return insert(&#39;&gt;&gt;5879\n&#39;);">5879</a>
+
+</span><span class="DESU_postPanel" info="5879"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5879-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5869" onclick="return highlight(&#39;5869&#39;, true);" class="ref|i2p|5465|5869">&gt;&gt;5869</a>
+<br>
+Эта параша ещё не взлетела, а уже зашкварена рейтингами, vip-статусами, ебанутыми смайлами и админом, не шарящим в основах i2p. Уёбищный дизайн в нагрузку.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#5895">&gt;&gt;5895</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#5911">&gt;&gt;5911</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5895" desu-post="5895">
+<a name="5895"></a>
+<label>
+<input type="checkbox" name="post[]" value="5895">
+
+
+
+<span class="postername">Anonymous</span>
+
+25.08.2013 (Sun) 17:38:31
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5895" onclick="return highlight(&#39;5895&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5895" onclick="return insert(&#39;&gt;&gt;5895\n&#39;);">5895</a>
+
+</span><span class="DESU_postPanel" info="5895"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5895-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5879" onclick="return highlight(&#39;5879&#39;, true);" class="ref|i2p|5465|5879">&gt;&gt;5879</a>
+<br>
+Единственное зло, которое он может причинить - стать главным героем новостных лент. Но до этого вроде далеко.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply5911" desu-post="5911">
+<a name="5911"></a>
+<label>
+<input type="checkbox" name="post[]" value="5911">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.08.2013 (Tue) 12:41:02
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5911" onclick="return highlight(&#39;5911&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i5911" onclick="return insert(&#39;&gt;&gt;5911\n&#39;);">5911</a>
+
+</span><span class="DESU_postPanel" info="5911"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-5911-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5869" onclick="return highlight(&#39;5869&#39;, true);" class="ref|i2p|5465|5869">&gt;&gt;5869</a>
+<br>
+это надо было постить в тред, где анон искал социалку в i2p
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#5879" onclick="return highlight(&#39;5879&#39;, true);" class="ref|i2p|5465|5879">&gt;&gt;5879</a>
+<br>
+<span class="unkfunc">&gt;кудахтахтах рейтинги, вип, кукареку
+</span><br>
+ох лол, илитный анонимус закукарекал. Ты забыл сказать еще, что там J-скрипты есть, вот ужас вообще.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6169" desu-post="6169">
+<a name="6169"></a>
+<label>
+<input type="checkbox" name="post[]" value="6169">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.09.2013 (Thu) 17:55:09
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6169" onclick="return highlight(&#39;6169&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6169" onclick="return insert(&#39;&gt;&gt;6169\n&#39;);">6169</a>
+
+</span><span class="DESU_postPanel" info="6169"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6169-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Все таки syndie и tahoе-lafs оказались мертворожденным говном. Пока вариант ОПа самый вменяемый.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6170" desu-post="6170">
+<a name="6170"></a>
+<label>
+<input type="checkbox" name="post[]" value="6170">
+
+
+
+<span class="postername">Anonymous</span>
+
+26.09.2013 (Thu) 20:34:12
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6170" onclick="return highlight(&#39;6170&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6170" onclick="return insert(&#39;&gt;&gt;6170\n&#39;);">6170</a>
+
+</span><span class="DESU_postPanel" info="6170"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6170-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Я думаю на тему веб-приложения, т.е. обычная связка веб-сервер + фреймворк + база. Помимо этого - некий протокол обмена между такими приложениями (push/pull) для обмена постами. Масштабируемость - на каждом инстансе можно настроить любое кол-во партнёров по push/pull. Каждый инстанс к сообщениям добавляет свою digital signature, т.о. админ любого другого инстанса может дропать сообщения какого-нибудь неугдного пира (это на всякий случай). Ну и вокруг всего этого детали додумать - как разруливать конфликты, время, ответы, id постов, создание / удаление досок, удаление сообщений и прочее.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6177" desu-post="6177">
+<a name="6177"></a>
+<label>
+<input type="checkbox" name="post[]" value="6177">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.09.2013 (Fri) 04:08:10
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6177" onclick="return highlight(&#39;6177&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6177" onclick="return insert(&#39;&gt;&gt;6177\n&#39;);">6177</a>
+
+</span><span class="DESU_postPanel" info="6177"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6177-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Подкину крамольную мысль: распределённую борду можно даже в и2п не держать. Контент хранить кусками у участников бордосети с такой-то избыточностью, чтобы не было больших проблем с выходом узлов из строя. Результат: палево В ОТКРЫТОМ БЛЕАТЬ ДОСТУПЕ, а никто не виноват, лол, потому как контент хранится распределённо у всех и одновременно ни у кого.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6180">&gt;&gt;6180</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6179" desu-post="6179">
+<a name="6179"></a>
+<label>
+<input type="checkbox" name="post[]" value="6179">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.09.2013 (Fri) 10:13:57
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6179" onclick="return highlight(&#39;6179&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6179" onclick="return insert(&#39;&gt;&gt;6179\n&#39;);">6179</a>
+
+</span><span class="DESU_postPanel" info="6179"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6179-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Как это вижу я:
+<br>
+Сетка DHT, все блоки в парах, в каждой паре один блок - заголовок, второй - данные. Синхронизируются только заголовки, которые содержат теги (язык, о чем, где, etc). Клиент сам выбирает для себя определенные теги, получает из списка заголовков свой список, сканит сетку на появление определенных тел себя и своих соседей. Это позволит избежать тормознутости сети при большом объеме информации в ней. В телах может быть что угодно, но нужен определенный стандарт для них с описанием универсального внутреннего устройства. Стандарт для заголовков подразумевается как необходимый для функционирования.
+<br>
+Отображение клиентом полученных данных решается с помощью шаблона, написанного по вкусам пользователя - борда, форум, блоголента, etc.
+<br>
+Но это очень-очень примерно и почти без деталей.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6180" desu-post="6180">
+<a name="6180"></a>
+<label>
+<input type="checkbox" name="post[]" value="6180">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.09.2013 (Fri) 12:25:00
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6180" onclick="return highlight(&#39;6180&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6180" onclick="return insert(&#39;&gt;&gt;6180\n&#39;);">6180</a>
+
+</span><span class="DESU_postPanel" info="6180"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6180-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6177" onclick="return highlight(&#39;6177&#39;, true);" class="ref|i2p|5465|6177">&gt;&gt;6177</a>
+<br>
+Кстати, а это мысль. Распределённая файлопомойка. Организация - по принципу п2п и дхт. Подключаясь, каждый участник отдаёт сколько-то места на диске под нужды сети, где размещаются блоки данных. Любой файлик, даже 111.txt размером в 1 байт, обязательно разбивается не менее чем на два блока данных. Софтина собирает статистику по месту и доступности хостов, на основании чего дублирует блоки, затем, на основании статистики скорости и достижимости, распределяет эти блоки по другим узлам так, чтобы ликвидировать максимум бутылочных горлышек.
+<br>
+При подключении к сети, строится обновляющийся индекс содержимого сети, по аналогии с биткойном, и - пожалуйста, браузим и качаем.
+<br>
+Каждый файл сопровождается тремя ключами: уникальным хэшем для поиска и сборки, именем файла и паролем. Пароль нужен, чтобы закачавший мог в любое время удалить закинутое, не загрязняя сеть при обновлениях выложенного.
+<br>
+
+<br>
+Фишка в том, что содержимое нигде конкретно не находится и поддерживается в доступном состоянии самой сетью, а при надобности скачать - собирается в конечный файл уже на машине, запрашивающей контент.
+<br>
+
+<br>
+Пока сходу только одна принципиальная проблема: нужно как-то обеспечить равноправие блоков - в том смысле, чтобы участник сети не мог решать, какие именно блоки будут занимать выделенное место.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6181">&gt;&gt;6181</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6183">&gt;&gt;6183</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6181" desu-post="6181">
+<a name="6181"></a>
+<label>
+<input type="checkbox" name="post[]" value="6181">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.09.2013 (Fri) 13:03:21
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6181" onclick="return highlight(&#39;6181&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6181" onclick="return insert(&#39;&gt;&gt;6181\n&#39;);">6181</a>
+
+</span><span class="DESU_postPanel" info="6181"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6181-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6180" onclick="return highlight(&#39;6180&#39;, true);" class="ref|i2p|5465|6180">&gt;&gt;6180</a>
+<br>
+<span class="unkfunc">&gt;Распределённая файлопомойка.
+</span><br>
+
+<br>
+tahoe?<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6183" desu-post="6183">
+<a name="6183"></a>
+<label>
+<input type="checkbox" name="post[]" value="6183">
+
+
+
+<span class="postername">Anonymous</span>
+
+27.09.2013 (Fri) 15:32:37
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6183" onclick="return highlight(&#39;6183&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6183" onclick="return insert(&#39;&gt;&gt;6183\n&#39;);">6183</a>
+
+</span><span class="DESU_postPanel" info="6183"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6183-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6180" onclick="return highlight(&#39;6180&#39;, true);" class="ref|i2p|5465|6180">&gt;&gt;6180</a>
+<br>
+Поздравляю! Ты только что придумал фринет<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6185" desu-post="6185">
+<a name="6185"></a>
+<label>
+<input type="checkbox" name="post[]" value="6185">
+
+
+
+<span class="postername">Anonymous</span>
+
+28.09.2013 (Sat) 00:30:01
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6185" onclick="return highlight(&#39;6185&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6185" onclick="return insert(&#39;&gt;&gt;6185\n&#39;);">6185</a>
+
+</span><span class="DESU_postPanel" info="6185"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6185-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138031380138.jpg" onclick="javascript:expandimg(&#39;6185&#39;, &#39;http://hiddenchan.i2p/i2p/src/138031380138.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138031380138s.jpg&#39;, &#39;1053&#39;, &#39;842&#39;, &#39;200&#39;, &#39;160&#39;);return false;">
+
+138031380138.jpg</a>
+
+- (381.52KB
+
+, 1053x842)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138031380138.jpg" onclick="javascript:expandimg(&#39;6185&#39;, &#39;http://hiddenchan.i2p/i2p/src/138031380138.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138031380138s.jpg&#39;, &#39;1053&#39;, &#39;842&#39;, &#39;200&#39;, &#39;160&#39;);return false;">
+<span id="thumb6185"><img src="./ i2p - Распределенная имиджборда в I2P_files/138031380138s.jpg" alt="6185" class="thumb" height="160" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+Блядь, вот вам делать нехуй. Есть куда более интересные и полезные задачи для распределённых сетей.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6189" desu-post="6189">
+<a name="6189"></a>
+<label>
+<input type="checkbox" name="post[]" value="6189">
+
+
+
+<span class="postername">Anonymous</span>
+
+28.09.2013 (Sat) 20:34:51
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6189" onclick="return highlight(&#39;6189&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6189" onclick="return insert(&#39;&gt;&gt;6189\n&#39;);">6189</a>
+
+</span><span class="DESU_postPanel" info="6189"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6189-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Тред не читал.
+<br>
+Смотри FreeNet и Frost.
+<br>
+Велосипедов не надо.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6190">&gt;&gt;6190</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6190" desu-post="6190">
+<a name="6190"></a>
+<label>
+<input type="checkbox" name="post[]" value="6190">
+
+
+
+<span class="postername">Anonymous</span>
+
+28.09.2013 (Sat) 21:05:56
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6190" onclick="return highlight(&#39;6190&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6190" onclick="return insert(&#39;&gt;&gt;6190\n&#39;);">6190</a>
+
+</span><span class="DESU_postPanel" info="6190"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6190-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6189" onclick="return highlight(&#39;6189&#39;, true);" class="ref|i2p|5465|6189">&gt;&gt;6189</a>
+<br>
+<span class="unkfunc">&gt;Ко-ко-ко НИНУЖНА
+</span><br>
+<i><b>Its all about НИНУЖНО! BLJAD!11111</b></i><br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6240" desu-post="6240">
+<a name="6240"></a>
+<label>
+<input type="checkbox" name="post[]" value="6240">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.10.2013 (Fri) 07:49:02
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6240" onclick="return highlight(&#39;6240&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6240" onclick="return insert(&#39;&gt;&gt;6240\n&#39;);">6240</a>
+
+</span><span class="DESU_postPanel" info="6240"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6240-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Аноны, е что если сделать всё <b>проще</b>?
+<br>
+
+<br>
+<span class="unkfunc">&gt; легковесная программа-клиент имеет ядро и информацию треды/посты ("контент") и постоянно держит связь с другими участниками по DHT.
+</span><br>
+Гуглить статью joel'а "астронавты архитектуры".
+<br>
+
+<br>
+Описанный подход хорош, когда у нас постоянно меняется список хостов, и сами они живут от часа до недели (в среднем). Количество же хостов исчисляется тысячами. А теперь оглянитесь вокруг: в i2p борд от силы десяток, крупных - 3, и время жизни у них - годы, а не часы. Даже в обычном интернете вы наберёте 3-4 сотни борд всего, и опять же, время жизни - минимум месяцы, но никак не часы и не дни.
+<br>
+
+<br>
+Что я предлагаю: не городить огород с DHT. Концепция простая: один пост - один файл + аттачи. Никаких демонов, тупая вебморда-рендерилка и опционально - кэш в БД (mysql/posgre/mongo/memcached) или файлах. Важно, чтобы этот кэш мог полностью пересоздаваться из файлов.
+<br>
+
+<br>
+Метод организации хостов - федерация. Грубо говоря, стоит группа хостов и тянут друг с друга новые посты в виде файлов. Необязательно "каждый с каждого", хоть "кольцом", хоть "звездой", главное чтобы дошло. Передача через rsync/ftp/http(+rss), вообще пофиг, хоть через COM0. После, вебморде выдаётся команда на обновление кэша, если он есть.
+<br>
+
+<br>
+Задержка сообщений зависит от частоты синхронизации и количества  транзитных пересылок.
+<br>
+
+<br>
+<span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">Да, я заново придумал нетмэйл.</span><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6242">&gt;&gt;6242</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6242" desu-post="6242">
+<a name="6242"></a>
+<label>
+<input type="checkbox" name="post[]" value="6242">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.10.2013 (Fri) 13:58:59
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6242" onclick="return highlight(&#39;6242&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6242" onclick="return insert(&#39;&gt;&gt;6242\n&#39;);">6242</a>
+
+</span><span class="DESU_postPanel" info="6242"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6242-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6240" onclick="return highlight(&#39;6240&#39;, true);" class="ref|i2p|5465|6240">&gt;&gt;6240</a>
+<br>
+<span class="unkfunc">&gt;Гуглить статью joel'а "астронавты архитектуры". 
+</span><br>
+Загуглил, хорошая статья.
+<br>
+
+<br>
+<span class="unkfunc">&gt;Описанный подход хорош, когда у нас постоянно меняется список хостов, 
+</span><br>
+<span class="unkfunc">&gt;и сами они живут от часа до недели (в среднем)
+</span><br>
+Но ведь это действительно так. Система по DHT более масштабируемая (в т.ч. в сторону крайне низкого кол-ва хостов), терпимая к перестройке туннелей. Расчитывая на малую жизнь хостов и высокий сквозной проток пользователей, повышаешь терпимость к сильным сбоям. Более того, не все держат машины включенными на ночь.
+<br>
+
+<br>
+К чему я веду вообще: нельзя полагаться на одну схему распределения. Та схема, которую я предложил, вполне может оказаться дерьмом. Самое лучшее - сделать кросс-совместимость, чтобы то что ты предложил обменивалось сообщениями с тем что в ОП-посте, еще с чем-то и т.д. и т.п. Вот тогда будет непотопляемо.
+<br>
+
+<br>
+<span class="unkfunc">&gt;Да, я заново придумал нетмэйл.
+</span><br>
+Не поверишь, но нечто похожее уже здесь есть на базе NNTP:
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5602.html">http://hiddenchan.i2p/i2p/res/5602.html</a><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6244">&gt;&gt;6244</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6244" desu-post="6244">
+<a name="6244"></a>
+<label>
+<input type="checkbox" name="post[]" value="6244">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.10.2013 (Fri) 16:33:29
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6244" onclick="return highlight(&#39;6244&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6244" onclick="return insert(&#39;&gt;&gt;6244\n&#39;);">6244</a>
+
+</span><span class="DESU_postPanel" info="6244"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6244-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6242" onclick="return highlight(&#39;6242&#39;, true);" class="ref|i2p|5465|6242">&gt;&gt;6242</a>
+<br>
+Я видел этот тред с nntp. Проблема в том, что этот протокол разрабатывался 30 лет назад и недостаточно расширяем. Для файлов там уже костыли лепят. Если же сломать совместимость - весь профит от использования nntp пропадёт.
+<br>
+
+<br>
+Нужна хорошая и проработанная спецификация для формата обмена сообщениями, всего-то.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6245">&gt;&gt;6245</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6262">&gt;&gt;6262</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6245" desu-post="6245">
+<a name="6245"></a>
+<label>
+<input type="checkbox" name="post[]" value="6245">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.10.2013 (Fri) 18:55:28
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6245" onclick="return highlight(&#39;6245&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6245" onclick="return insert(&#39;&gt;&gt;6245\n&#39;);">6245</a>
+
+</span><span class="DESU_postPanel" info="6245"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6245-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138089852779.png" onclick="javascript:expandimg(&#39;6245&#39;, &#39;http://hiddenchan.i2p/i2p/src/138089852779.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138089852779s.png&#39;, &#39;436&#39;, &#39;435&#39;, &#39;200&#39;, &#39;200&#39;);return false;">
+
+138089852779.png</a>
+
+- (45.41KB
+
+, 436x435)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138089852779.png" onclick="javascript:expandimg(&#39;6245&#39;, &#39;http://hiddenchan.i2p/i2p/src/138089852779.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138089852779s.png&#39;, &#39;436&#39;, &#39;435&#39;, &#39;200&#39;, &#39;200&#39;);return false;">
+<span id="thumb6245"><img src="./ i2p - Распределенная имиджборда в I2P_files/138089852779s.png" alt="6245" class="thumb" height="200" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6244" onclick="return highlight(&#39;6244&#39;, true);" class="ref|i2p|5465|6244">&gt;&gt;6244</a>
+<br>
+Жаббер ениван?<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6262" desu-post="6262">
+<a name="6262"></a>
+<label>
+<input type="checkbox" name="post[]" value="6262">
+
+
+
+<span class="postername">Anonymous</span>
+
+06.10.2013 (Sun) 17:49:14
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6262" onclick="return highlight(&#39;6262&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6262" onclick="return insert(&#39;&gt;&gt;6262\n&#39;);">6262</a>
+
+</span><span class="DESU_postPanel" info="6262"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6262-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+ОП nntp-треда здесь.
+<br>
+
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6244" onclick="return highlight(&#39;6244&#39;, true);" class="ref|i2p|5465|6244">&gt;&gt;6244</a>
+<br>
+<span class="unkfunc">&gt;для файлов костыли уже лепят
+</span><br>
+Ты про UUE, Base64 и yEnc? Да, но дело в том, что эти костыли уже слепили много лет назад, и используются они настолько широко, что уже превратились в стандарт.
+<br>
+
+<br>
+<span class="unkfunc">&gt;протокол разрабатывался 30 лет назад и недостаточно расширяем
+</span><br>
+Для борды больше и не надо. Я лично столкнулся с другой проблемой: организация тредов в Usenet и на борде разная (flat thread vs. tree-like). Причем в Usenet тредом можно считать и ответвление основного треда, и постить одно сообщение на разные доски одновременно. Это достигается тем, что сервер Usenet вообще такого понятия, как тред, не знает. Я предполагал использовать организацию тредов, принятую на АИБ (все сообщения в треде ссылаются на первое), и давать свободный read-only доступ по NNTP, чтоб анонам было удобно подписываться на треды и сохранять их. В том треде кто-то выражал желание постить на такую борду через нативные клиенты, но при таком раскладе проще не писать веб-интерфейс, а просто держать NNTP-сервер. Если бы большинство из здесь присутствующих имело понятие о Usenet и у нас было в сети хотя бы три-четыре связанных сервера, принадлежащих разным людям, я бы вовсе не начинал писать ту борду, просто не было бы необходимости. При использовании современного графического клиента нет никакой разницы с АИБ (другое дело, что многим анонам веб-интерфейс просто проще использовать, а большинство никогда и не слышало о newsgroups). Если посмотреть на историю Usenet, особенно 2008-ой год, нетрудно заметить, что большая часть наездов на эту сеть была именно из-за анонимности, вареза и ЦП. 
+<br>
+
+<br>
+Я не буду агитировать массово переезжать с АИБ в Usenet (хоть в I2P, хоть в обычных Интернетах), но я не вижу смысла изобретать велосипед, и до сих пор считаю, что сети NNTP-серверов вполне достаточно для распределенной АИБ.
+<br>
+
+<br>
+P.S. В данный момент у меня нет хостинга, но все ключи и исходники я сохранил. Хозяевам серверов не понравился объем траффика пяти флудфиллов...<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6274">&gt;&gt;6274</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6274" desu-post="6274">
+<a name="6274"></a>
+<label>
+<input type="checkbox" name="post[]" value="6274">
+
+
+
+<span class="postername">Anonymous</span>
+
+07.10.2013 (Mon) 13:25:39
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6274" onclick="return highlight(&#39;6274&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6274" onclick="return insert(&#39;&gt;&gt;6274\n&#39;);">6274</a>
+
+</span><span class="DESU_postPanel" info="6274"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6274-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6262" onclick="return highlight(&#39;6262&#39;, true);" class="ref|i2p|5465|6262">&gt;&gt;6262</a>
+<br>
+<span class="unkfunc">&gt;В данный момент у меня нет хостинга, но все ключи и исходники я сохранил.
+</span><br>
+На git repo не хочешь пока залить?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6285">&gt;&gt;6285</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6276" desu-post="6276">
+<a name="6276"></a>
+<label>
+<input type="checkbox" name="post[]" value="6276">
+
+
+
+<span class="postername">Anonymous</span>
+
+09.10.2013 (Wed) 18:36:45
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6276" onclick="return highlight(&#39;6276&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6276" onclick="return insert(&#39;&gt;&gt;6276\n&#39;);">6276</a>
+
+</span><span class="DESU_postPanel" info="6276"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6276-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Сегодня появилась такая мысль:
+<br>
+
+<br>
+Взять I2PBote за основу и перепилить его до возможности рассылки newsgroup как в Usenet, а веб-морду переделать чтобы иерархически отображала как имиджборду. Прикреплять же файлы любые можно, картинки морда сама отобразит. Выйдет отдельный модульный плагин.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6279" desu-post="6279">
+<a name="6279"></a>
+<label>
+<input type="checkbox" name="post[]" value="6279">
+
+
+
+<span class="postername">Anonymous</span>
+
+10.10.2013 (Thu) 00:48:22
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6279" onclick="return highlight(&#39;6279&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6279" onclick="return insert(&#39;&gt;&gt;6279\n&#39;);">6279</a>
+
+</span><span class="DESU_postPanel" info="6279"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6279-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138135170253.jpg" onclick="javascript:expandimg(&#39;6279&#39;, &#39;http://hiddenchan.i2p/i2p/src/138135170253.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138135170253s.jpg&#39;, &#39;630&#39;, &#39;415&#39;, &#39;200&#39;, &#39;132&#39;);return false;">
+
+138135170253.jpg</a>
+
+- (99.13KB
+
+, 630x415)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138135170253.jpg" onclick="javascript:expandimg(&#39;6279&#39;, &#39;http://hiddenchan.i2p/i2p/src/138135170253.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138135170253s.jpg&#39;, &#39;630&#39;, &#39;415&#39;, &#39;200&#39;, &#39;132&#39;);return false;">
+<span id="thumb6279"><img src="./ i2p - Распределенная имиджборда в I2P_files/138135170253s.jpg" alt="6279" class="thumb" height="132" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+У меня для вас подарок:
+<br>
+<a href="https://ru.wikipedia.org/wiki/Bitmessage#.D0.90.D0.BD.D0.BE.D0.BD.D0.B8.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F">https://ru.wikipedia.org/wiki/Bitmessage#.D0.90.D0.BD.D0.BE.D0.BD.D0.B8.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F</a><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6280">&gt;&gt;6280</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6288">&gt;&gt;6288</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6280" desu-post="6280">
+<a name="6280"></a>
+<label>
+<input type="checkbox" name="post[]" value="6280">
+
+
+
+<span class="postername">Anonymous</span>
+
+10.10.2013 (Thu) 03:50:07
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6280" onclick="return highlight(&#39;6280&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6280" onclick="return insert(&#39;&gt;&gt;6280\n&#39;);">6280</a>
+
+</span><span class="DESU_postPanel" info="6280"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6280-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6279" onclick="return highlight(&#39;6279&#39;, true);" class="ref|i2p|5465|6279">&gt;&gt;6279</a>
+<br>
+<span class="unkfunc">&gt; Зашифрованные сообщения хранятся в сети два дня, после чего удаляются участниками сети.
+</span><br>
+
+<br>
+fatality!<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6285" desu-post="6285">
+<a name="6285"></a>
+<label>
+<input type="checkbox" name="post[]" value="6285">
+
+
+
+<span class="postername">Anonymous</span>
+
+10.10.2013 (Thu) 12:45:42
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6285" onclick="return highlight(&#39;6285&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6285" onclick="return insert(&#39;&gt;&gt;6285\n&#39;);">6285</a>
+
+</span><span class="DESU_postPanel" info="6285"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6285-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6274" onclick="return highlight(&#39;6274&#39;, true);" class="ref|i2p|5465|6274">&gt;&gt;6274</a>
+<br>
+Я могу просто архив с исходниками тут выложить. Но очевидно, что главной проблемой для анонов было поднять собственный NNTP-сервер, а без него любые исходники бесполезны.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6288">&gt;&gt;6288</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6288" desu-post="6288">
+<a name="6288"></a>
+<label>
+<input type="checkbox" name="post[]" value="6288">
+
+
+
+<span class="postername">Anonymous</span>
+
+10.10.2013 (Thu) 14:07:39
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6288" onclick="return highlight(&#39;6288&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6288" onclick="return insert(&#39;&gt;&gt;6288\n&#39;);">6288</a>
+
+</span><span class="DESU_postPanel" info="6288"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6288-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6285" onclick="return highlight(&#39;6285&#39;, true);" class="ref|i2p|5465|6285">&gt;&gt;6285</a>
+<br>
+Порог вхождения, хули. А че там, сильно сложно?
+<br>
+
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6279" onclick="return highlight(&#39;6279&#39;, true);" class="ref|i2p|5465|6279">&gt;&gt;6279</a>
+<br>
+<span class="unkfunc">&gt;У меня для вас подарок
+</span><br>
+Неплохо, надо будет глянуть. Возможно удаление через двое суток можно отключить? А то реально фаталити же.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6313" desu-post="6313">
+<a name="6313"></a>
+<label>
+<input type="checkbox" name="post[]" value="6313">
+
+
+
+<span class="postername">Anonymous</span>
+
+11.10.2013 (Fri) 05:47:19
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6313" onclick="return highlight(&#39;6313&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6313" onclick="return insert(&#39;&gt;&gt;6313\n&#39;);">6313</a>
+
+</span><span class="DESU_postPanel" info="6313"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6313-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Анон, а ты слышал про Osiris?
+<br>
+<a href="https://ru.wikipedia.org/wiki/Osiris_%28%D0%B1%D0%B5%D1%81%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%29">https://ru.wikipedia.org/wiki/Osiris_%28%D0%B1%D0%B5%D1%81%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%29</a>
+<br>
+Децентрализованная CMS на основе которой можно зделать имеджборду.
+<br>
+
+<br>
+З.Ы. Инфу о подключение к каналу в bitmessage я разместил в сосднем треде(/res/6289.html).<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6314">&gt;&gt;6314</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6314" desu-post="6314">
+<a name="6314"></a>
+<label>
+<input type="checkbox" name="post[]" value="6314">
+
+
+
+<span class="postername">Anonymous</span>
+
+11.10.2013 (Fri) 11:13:11
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6314" onclick="return highlight(&#39;6314&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6314" onclick="return insert(&#39;&gt;&gt;6314\n&#39;);">6314</a>
+
+</span><span class="DESU_postPanel" info="6314"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6314-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6313" onclick="return highlight(&#39;6313&#39;, true);" class="ref|i2p|5465|6313">&gt;&gt;6313</a>
+<br>
+zделать<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6316" desu-post="6316">
+<a name="6316"></a>
+<label>
+<input type="checkbox" name="post[]" value="6316">
+
+
+
+<span class="postername">Anonymous</span>
+
+11.10.2013 (Fri) 13:08:03
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6316" onclick="return highlight(&#39;6316&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6316" onclick="return insert(&#39;&gt;&gt;6316\n&#39;);">6316</a>
+
+</span><span class="DESU_postPanel" info="6316"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6316-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<span class="unkfunc">&gt;zделать
+</span><br>
+Это приём против деаномизации т.к. больше нигда я так не пишу.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6317" desu-post="6317">
+<a name="6317"></a>
+<label>
+<input type="checkbox" name="post[]" value="6317">
+
+
+
+<span class="postername">Anonymous</span>
+
+11.10.2013 (Fri) 13:49:17
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6317" onclick="return highlight(&#39;6317&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6317" onclick="return insert(&#39;&gt;&gt;6317\n&#39;);">6317</a>
+
+</span><span class="DESU_postPanel" info="6317"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6317-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://habrahabr.ru/post/197168/">http://habrahabr.ru/post/197168/</a>
+<br>
+
+<br>
+Торренты соснули или что?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6323">&gt;&gt;6323</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6323" desu-post="6323">
+<a name="6323"></a>
+<label>
+<input type="checkbox" name="post[]" value="6323">
+
+
+
+<span class="postername">Anonymous</span>
+
+11.10.2013 (Fri) 17:22:12
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6323" onclick="return highlight(&#39;6323&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6323" onclick="return insert(&#39;&gt;&gt;6323\n&#39;);">6323</a>
+
+</span><span class="DESU_postPanel" info="6323"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6323-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6317" onclick="return highlight(&#39;6317&#39;, true);" class="ref|i2p|5465|6317">&gt;&gt;6317</a>
+<br>
+Влажные фантазии чиновника, не более. У него даже теоретической базы нет под это дело.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6334" desu-post="6334">
+<a name="6334"></a>
+<label>
+<input type="checkbox" name="post[]" value="6334">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 10:44:57
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6334" onclick="return highlight(&#39;6334&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6334" onclick="return insert(&#39;&gt;&gt;6334\n&#39;);">6334</a>
+
+</span><span class="DESU_postPanel" info="6334"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6334-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Блядь, охуенно. Пиздели-пиздели про распределенную сеть, а договорились до централизованной с nntp-сервером. И еще много велосипедо-хуйни про передачу файлов и маршрутизацию, а про проблему множественного доступа (более двух анонов изменяют один и тот же объект) - нихуя. Кроме временных меток и, очевидно, центрального сервера точного времени. Ха-ха-ха, я с вас смеюсь.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6335">&gt;&gt;6335</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6335" desu-post="6335">
+<a name="6335"></a>
+<label>
+<input type="checkbox" name="post[]" value="6335">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 11:54:22
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6335" onclick="return highlight(&#39;6335&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6335" onclick="return insert(&#39;&gt;&gt;6335\n&#39;);">6335</a>
+
+</span><span class="DESU_postPanel" info="6335"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6335-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6334" onclick="return highlight(&#39;6334&#39;, true);" class="ref|i2p|5465|6334">&gt;&gt;6334</a>
+<br>
+Очевидно (или почти очевидно), что задача решается соответствующими типу данных инструментами - master-master репликацией баз, rsync и прочими средствами нехитрого копирования. Вот ведь какая штука - все эти средства усложняют живущее на энтузиазме сайторазмещение. Если ты такой Д'Артньян - сделай сам. Критиковать всяк может.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6336" desu-post="6336">
+<a name="6336"></a>
+<label>
+<input type="checkbox" name="post[]" value="6336">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 11:56:42
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6336" onclick="return highlight(&#39;6336&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6336" onclick="return insert(&#39;&gt;&gt;6336\n&#39;);">6336</a>
+
+</span><span class="DESU_postPanel" info="6336"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6336-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Выясните как реалезован множественный доступ в Osiris, там же есть распределённые форумы.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6337" desu-post="6337">
+<a name="6337"></a>
+<label>
+<input type="checkbox" name="post[]" value="6337">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 12:37:35
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6337" onclick="return highlight(&#39;6337&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6337" onclick="return insert(&#39;&gt;&gt;6337\n&#39;);">6337</a>
+
+</span><span class="DESU_postPanel" info="6337"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6337-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<span class="unkfunc">&gt; Выясните как реалезован множественный доступ в Osiris, там же есть распределённые форумы.
+</span><br>
+Да вот выясняю, и такое чувство, что вопросы синхронизации и репликации настолько несущественны, что их даже не упоминают в white-paper/reference (к BitMessage это тоже относится). Или я тупой и не нашел. Попробую перечитать Таненбаума "Распределенные системы. Принципы и парадигмы" — это все-таки легче, чем изучать код для выяснения, как они это реализовали.
+<br>
+
+<br>
+По поводу rsync, так он же подразумевает мастер-сервер, а вроде хотели распределенную систему.
+<br>
+
+<br>
+Может быть посоветуете еще что-нибудь кроме упомянутой книги Таненбаума?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6339">&gt;&gt;6339</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6338" desu-post="6338">
+<a name="6338"></a>
+<label>
+<input type="checkbox" name="post[]" value="6338">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 13:11:44
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6338" onclick="return highlight(&#39;6338&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6338" onclick="return insert(&#39;&gt;&gt;6338\n&#39;);">6338</a>
+
+</span><span class="DESU_postPanel" info="6338"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6338-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<span class="unkfunc">&gt;(более двух анонов изменяют один и тот же объект)
+</span><br>
+
+<br>
+Не более двух, а более одного и вот лучшая формулировка проблемы множественного доступа — <i>Я же о этом — изобразим BitMessage, когда некоторое множество участников читает/пишет в общее сообщение аналог треда (очевидно, что чтение, в отличие от записи, не изменяет состояние автомата), такой моделью: каждый участник представлен бесконечным автоматом. Пусть в момент X состояние автоматов тождественно. Как решается задача приведения автоматов к тождественности, когда одновременно изменили состояние более двух автоматов (так называемый множественный доступ)?</i><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6339">&gt;&gt;6339</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6339" desu-post="6339">
+<a name="6339"></a>
+<label>
+<input type="checkbox" name="post[]" value="6339">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 14:02:30
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6339" onclick="return highlight(&#39;6339&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6339" onclick="return insert(&#39;&gt;&gt;6339\n&#39;);">6339</a>
+
+</span><span class="DESU_postPanel" info="6339"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6339-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6337" onclick="return highlight(&#39;6337&#39;, true);" class="ref|i2p|5465|6337">&gt;&gt;6337</a>
+<br>
+rsync решает задачу одностороннего сравнения и приведения к эталонному виду. Серверная реализация - один из способов. Можно заморочиться с двухсторонней передачей. Ещё есть lsync.
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6338" onclick="return highlight(&#39;6338&#39;, true);" class="ref|i2p|5465|6338">&gt;&gt;6338</a>
+<br>
+Стоит ставить задачу в разрезе проблемы. В твоём примере нам просто нужно удостовериться, не конфликтуют ли эти два изменения, и принять их.
+<br>
+
+<br>
+Вообще, господа, поставьте конкретную задачу. Ибо при попытке разработать в голове способ реализации этой вашей <i>распределённости</i> у меня возникает вопрос - <i>Для чего?</i> - нельзя решить сразу все проблемы, и не будет идеальной реализации. Всё есть костыль.
+<br>
+<i>диванный</i><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6340">&gt;&gt;6340</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6340" desu-post="6340">
+<a name="6340"></a>
+<label>
+<input type="checkbox" name="post[]" value="6340">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 14:21:06
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6340" onclick="return highlight(&#39;6340&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6340" onclick="return insert(&#39;&gt;&gt;6340\n&#39;);">6340</a>
+
+</span><span class="DESU_postPanel" info="6340"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6340-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6339" onclick="return highlight(&#39;6339&#39;, true);" class="ref|i2p|5465|6339">&gt;&gt;6339</a>
+<br>
+По-моему задача такова, реализовать средство <i>коллективного</i> текстового общения без центрального сервера.
+<br>
+
+<br>
+Составил список реализаций из упомянутых аноном. Я не знаю, действительно ли они реализуют заявленную задачу, так как пользовался только fms/frost и не изучал их архитектуру:
+<br>
+<a href="https://en.wikipedia.org/wiki/Bitmessage">https://en.wikipedia.org/wiki/Bitmessage</a>
+<br>
+<a href="http://en.wikipedia.org/wiki/Syndie">http://en.wikipedia.org/wiki/Syndie</a>
+<br>
+<a href="https://en.wikipedia.org/wiki/Osiris_">https://en.wikipedia.org/wiki/Osiris_</a>(Serverless_Portal_System)
+<br>
+<a href="https://tahoe-lafs.org/trac/tahoe-lafs/browser/trunk/docs/about.rst">https://tahoe-lafs.org/trac/tahoe-lafs/browser/trunk/docs/about.rst</a>
+<br>
+<a href="https://nightweb.net/">https://nightweb.net/</a>
+<br>
+<a href="https://github.com/tslocum/p2pchan">https://github.com/tslocum/p2pchan</a>
+<br>
+freenet: frost, fms, freetalk, sone, flip<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6341">&gt;&gt;6341</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6344">&gt;&gt;6344</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6346">&gt;&gt;6346</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6347">&gt;&gt;6347</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6341" desu-post="6341">
+<a name="6341"></a>
+<label>
+<input type="checkbox" name="post[]" value="6341">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 14:36:04
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6341" onclick="return highlight(&#39;6341&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6341" onclick="return insert(&#39;&gt;&gt;6341\n&#39;);">6341</a>
+
+</span><span class="DESU_postPanel" info="6341"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6341-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6340" onclick="return highlight(&#39;6340&#39;, true);" class="ref|i2p|5465|6340">&gt;&gt;6340</a>
+<br>
+Что до анонимности, то, по-моему, в случае коллективного общения методы анонимизации могут быть основаны только на транспортном уровне, то есть сокрытии отправителя/получателя сообщения, что, опять же по-моему, позволяет рассматривать задачи анонимизации и коллективного общения без центрального сервера независимо. 
+<br>
+
+<br>
+Из анонимизаций для коллективного общения мне нравится анонимизация отправителя/получателя реализованная в BitMessage, а именно "маршрутизация" на основе открытого ключа шифрования.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6344" desu-post="6344">
+<a name="6344"></a>
+<label>
+<input type="checkbox" name="post[]" value="6344">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 18:05:50
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6344" onclick="return highlight(&#39;6344&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6344" onclick="return insert(&#39;&gt;&gt;6344\n&#39;);">6344</a>
+
+</span><span class="DESU_postPanel" info="6344"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6344-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6340" onclick="return highlight(&#39;6340&#39;, true);" class="ref|i2p|5465|6340">&gt;&gt;6340</a><br>
+Всё-таки изначально, задача была реализовать "Распределенную <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">анонимную</span> имиджборду в I2P".<br>
+Предложу свою интерпретацию задачи:<br>
+<ul><li>Распределённую:</li></ul>** Не имеющей единой точки отказа, контроля.<br>
+<ul><li>Анонимную:</li></ul>** Невозможность установить, что два или более сообщений были написаны одним или разными авторами, за исключением публикации этой информации самим автором.<br>
+<ul><li>Имиджборду:</li></ul>** Возможность публиковать текст и файлы.<br>
+** Группировка сообщений по категориям (борды, доски, страницы, треды, ..).<br>
+<ul><li>в I2P.</li></ul><br>
+А средств коллективного текстового общения без центрального сервера и так уже навалом.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6346">&gt;&gt;6346</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6345" desu-post="6345">
+<a name="6345"></a>
+<label>
+<input type="checkbox" name="post[]" value="6345">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 18:33:03
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6345" onclick="return highlight(&#39;6345&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6345" onclick="return insert(&#39;&gt;&gt;6345\n&#39;);">6345</a>
+
+</span><span class="DESU_postPanel" info="6345"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6345-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<span class="unkfunc">&gt;А средств коллективного текстового общения без центрального сервера и так уже навалом.
+</span><br>
+Например?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6346">&gt;&gt;6346</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6347">&gt;&gt;6347</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6346" desu-post="6346">
+<a name="6346"></a>
+<label>
+<input type="checkbox" name="post[]" value="6346">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 19:31:28
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6346" onclick="return highlight(&#39;6346&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6346" onclick="return insert(&#39;&gt;&gt;6346\n&#39;);">6346</a>
+
+</span><span class="DESU_postPanel" info="6346"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6346-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6344" onclick="return highlight(&#39;6344&#39;, true);" class="ref|i2p|5465|6344">&gt;&gt;6344</a>
+<br>
+Ты правильно интерпритировал задачу, и похоже единственный в треде. ИСЧХ, аноны обычно налетают и суют совершенно другие реализация (типа syndie <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">которая БЛДЖАД НЕ ИМИДЖБОРДА</span>)
+<br>
+
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6345" onclick="return highlight(&#39;6345&#39;, true);" class="ref|i2p|5465|6345">&gt;&gt;6345</a>
+<br>
+<span class="unkfunc">&gt;Например?
+</span><br>
+-----&gt;  <a href="http://hiddenchan.i2p/i2p/res/5465.html#6340" onclick="return highlight(&#39;6340&#39;, true);" class="ref|i2p|5465|6340">&gt;&gt;6340</a><br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6347" desu-post="6347">
+<a name="6347"></a>
+<label>
+<input type="checkbox" name="post[]" value="6347">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 20:01:10
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6347" onclick="return highlight(&#39;6347&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6347" onclick="return insert(&#39;&gt;&gt;6347\n&#39;);">6347</a>
+
+</span><span class="DESU_postPanel" info="6347"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6347-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6345" onclick="return highlight(&#39;6345&#39;, true);" class="ref|i2p|5465|6345">&gt;&gt;6345</a><br>
+Если перечисленных в <a href="http://hiddenchan.i2p/i2p/res/5465.html#6340" onclick="return highlight(&#39;6340&#39;, true);" class="ref|i2p|5465|6340">&gt;&gt;6340</a> тебе мало, то есть ещё:<br>
+Freenet Darknet Chat, I2P Messenger, Gnutella Chat, I2P-Bote, Tox(<a href="https://github.com/irungentoo/ProjectTox-Core">https://github.com/irungentoo/ProjectTox-Core</a>),<br>
+Usenet, Jabber, eMail (да, у них нет единого центрального сервера),<br>
+Diaspora, Tahrir(<a href="https://github.com/sanity/tahrir">https://github.com/sanity/tahrir</a>)<br>
+<br>
+также можешь заглянуть сюда:<br>
+<a href="https://en.wikipedia.org/wiki/Comparison_of_software_and_protocols_for_distributed_social_networking">https://en.wikipedia.org/wiki/Comparison_of_software_and_protocols_for_distributed_social_networking</a><br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6348" desu-post="6348">
+<a name="6348"></a>
+<label>
+<input type="checkbox" name="post[]" value="6348">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 21:58:22
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6348" onclick="return highlight(&#39;6348&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6348" onclick="return insert(&#39;&gt;&gt;6348\n&#39;);">6348</a>
+
+</span><span class="DESU_postPanel" info="6348"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6348-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138160070221.png" onclick="javascript:expandimg(&#39;6348&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160070221.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160070221s.png&#39;, &#39;370&#39;, &#39;340&#39;, &#39;200&#39;, &#39;184&#39;);return false;">
+
+138160070221.png</a>
+
+- (30.11KB
+
+, 370x340)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138160070221.png" onclick="javascript:expandimg(&#39;6348&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160070221.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160070221s.png&#39;, &#39;370&#39;, &#39;340&#39;, &#39;200&#39;, &#39;184&#39;);return false;">
+<span id="thumb6348"><img src="./ i2p - Распределенная имиджборда в I2P_files/138160070221s.png" alt="6348" class="thumb" height="184" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+А идея с NNTP очень здравая. Но не в смысле пилить имиджборду на NNTP, а использовать его как прослойку между кусабой и её базой данных для синхронизации между серверами.<br>
+[code][Anonymous0] &lt;-&gt; [кусаба0] &lt;-&gt; [    ] &lt;-&gt; [db0]<br>
+[Anonymous1] &lt;-&gt; [кусаба1] &lt;-&gt; [Sync] &lt;-&gt; [db1]<br>
+[AnonymousN] &lt;-&gt; [кусабаN] &lt;-&gt; [    ] &lt;-&gt; [dbN][/code]<br>
+Sync, при событии или по таймеру, передаёт своим пирам diff своей базы данных, на уровне сообщений, со времени последнего сеанса передачи.<br>
+При получении diff'а от пира, Sync хранит его отдельно до определённого времени или пока админ его не одобрит (что бы была возможность быстро откатится, в случае вредоносных пиров), а потом мержит его в основную базу.<br>
+Всё это время, Sync пытается отдавать кусабе самую последнюю версию базы данных, включая все полученные diff'ы, что бы минимизировать рассинхронизацию.<br>
+[code][кусаба] -&gt; [Sync &gt; [свой накопленный diff]] -&gt; [db]<br>
+[кусаба] &lt;- [[все полученные diff'ы] &lt; Sync] &lt;- [db][/code]<br>
+Профит системы в том, что она будет работать с тем, что уже есть и не надо будет городить специально обученную айтупибу.<br>
+Так как со стороны пользователя ничего не меняется, ему не придётся устанавливать кучу плагинов и софта, что бы заходить на борду.<br>
+Система может быть применена не только к кусабе и не только к имиджбордам.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6349">&gt;&gt;6349</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6350">&gt;&gt;6350</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6501">&gt;&gt;6501</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6349" desu-post="6349">
+<a name="6349"></a>
+<label>
+<input type="checkbox" name="post[]" value="6349">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 22:27:40
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6349" onclick="return highlight(&#39;6349&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6349" onclick="return insert(&#39;&gt;&gt;6349\n&#39;);">6349</a>
+
+</span><span class="DESU_postPanel" info="6349"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6349-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138160246096.png" onclick="javascript:expandimg(&#39;6349&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160246096.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160246096s.png&#39;, &#39;851&#39;, &#39;446&#39;, &#39;200&#39;, &#39;105&#39;);return false;">
+
+138160246096.png</a>
+
+- (67.06KB
+
+, 851x446)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138160246096.png" onclick="javascript:expandimg(&#39;6349&#39;, &#39;http://hiddenchan.i2p/i2p/src/138160246096.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138160246096s.png&#39;, &#39;851&#39;, &#39;446&#39;, &#39;200&#39;, &#39;105&#39;);return false;">
+<span id="thumb6349"><img src="./ i2p - Распределенная имиджборда в I2P_files/138160246096s.png" alt="6349" class="thumb" height="105" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6348" onclick="return highlight(&#39;6348&#39;, true);" class="ref|i2p|5465|6348">&gt;&gt;6348</a><br>
+Сорри за распидарашенные диаграммы.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6350" desu-post="6350">
+<a name="6350"></a>
+<label>
+<input type="checkbox" name="post[]" value="6350">
+
+
+
+<span class="postername">Anonymous</span>
+
+12.10.2013 (Sat) 22:33:18
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6350" onclick="return highlight(&#39;6350&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6350" onclick="return insert(&#39;&gt;&gt;6350\n&#39;);">6350</a>
+
+</span><span class="DESU_postPanel" info="6350"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6350-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6348" onclick="return highlight(&#39;6348&#39;, true);" class="ref|i2p|5465|6348">&gt;&gt;6348</a>
+<br>
+Еще одна отличная идея, НО (!) это не совсем распределенность, это уже multi-homing с <span style="border-bottom: 1px solid">простой и очень надежной синхронизацией.
+<br>
+
+<br>
+<span class="unkfunc">&gt;Так как со стороны пользователя ничего не меняется, ему не придётся устанавливать кучу плагинов и софта, что бы заходить на борду.
+</span><br>
+Это плюс, но опять же несколько анонов должны поднять сервер с кусабой, дружно выпиливать баги и т.д. (и при этом не разосратся друг с другом)<br>
+
+
+</span></blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6356">&gt;&gt;6356</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6355" desu-post="6355">
+<a name="6355"></a>
+<label>
+<input type="checkbox" name="post[]" value="6355">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.10.2013 (Sun) 00:49:44
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6355" onclick="return highlight(&#39;6355&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6355" onclick="return insert(&#39;&gt;&gt;6355\n&#39;);">6355</a>
+
+</span><span class="DESU_postPanel" info="6355"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6355-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Я не понимаю, почему не отметили такую особенность, как требование - <i>должны ли участники репликации доверять друг другу?</i>
+<br>
+Потому как я полагаю, что должны. И в таком случае начинаются сложности. И в обратной ситуации начинаются сложности другого плана. Не проще зарулить какой-нибудь drbd поверх туннелей, дабы не мутить неуниверсальные костыли?
+<br>
+Anyway, ставьте задачи максимально конкретно. "Распределённый децентрализованный форум" - ни хрена не описание задачи, максимум - преамбула.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6356">&gt;&gt;6356</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6356" desu-post="6356">
+<a name="6356"></a>
+<label>
+<input type="checkbox" name="post[]" value="6356">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.10.2013 (Sun) 01:18:04
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6356" onclick="return highlight(&#39;6356&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6356" onclick="return insert(&#39;&gt;&gt;6356\n&#39;);">6356</a>
+
+</span><span class="DESU_postPanel" info="6356"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6356-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6350" onclick="return highlight(&#39;6350&#39;, true);" class="ref|i2p|5465|6350">&gt;&gt;6350</a><br>
+Да это не 100% распределённость, но мне кажется, что это участие АБСОЛЮТНО ВСЕХ пользователей в функционировании борды не принципиально.<br>
+Насчет синхронизации. db0, db1, db2 не обязательно будут идентичны.<br>
+Например, Скрытозой кусабы 0 выпилил у себя всё cp и отправил соответствующий diff Скрытозою кусабы 1, но тот был другого мнения и откатил изменение назад и впредь не принимает diff'ы на удаление cp.<br>
+Теперь у тех, кто сидит в кусабе 0 cp нет, а те кого оно интересует ходят в кусабу 1. НО при этом и те и могут общаться между собой, только на другие темы, так как остальные diff'ы Скрытозой кусабы 1 принимает.<br>
+Таким же образом, может прийти кто нибудь другой и форкнуть кусабу 1, но без куклотреда и все, кому не уютно от куклотреда будут ходить к нему. Или решит сделать отдельную борду, но продолжить синхронизировать /I2p и так далее.. Вариантов масса.<br>
+Главное что Anonymous из кусабы 0 может продолжать общаться с Anonymous'ом из кусабы 1 без куклотреда, а так же с Anonymous'ом из кусабы 8 и наоборот, пока их сообщения синхронизируются.<br>
+А если Anonymous'у что то не понравится, он всегда может перейти в кусабу 10 или запилить свою и при этом не потерять ни текущую аудиторию, ни контент, так как они общие для всех кусаб настолько, насколько это позволяют их админы.<br>
+<br>
+А то что нескольким анонам придётся поднимать сервер и дружно вылавливать баги, это особенность любого не централизованного решения.<br>
+Преимущество же обсуждаемого решения в том, что поднимать сервер\ставить специальный софт надо будет не всем и сразу, а ограниченному количеству заинтересованных лиц.<br>
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6355" onclick="return highlight(&#39;6355&#39;, true);" class="ref|i2p|5465|6355">&gt;&gt;6355</a><br>
+<span class="unkfunc">&gt; должны ли участники репликации доверять друг другу?</span><br>
+Участники репликации, будучи анонимными никак не могут доверять друг другу.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6361">&gt;&gt;6361</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6362">&gt;&gt;6362</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6361" desu-post="6361">
+<a name="6361"></a>
+<label>
+<input type="checkbox" name="post[]" value="6361">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.10.2013 (Sun) 10:00:41
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6361" onclick="return highlight(&#39;6361&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6361" onclick="return insert(&#39;&gt;&gt;6361\n&#39;);">6361</a>
+
+</span><span class="DESU_postPanel" info="6361"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6361-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6356" onclick="return highlight(&#39;6356&#39;, true);" class="ref|i2p|5465|6356">&gt;&gt;6356</a>
+<br>
+<span class="unkfunc">&gt; Например, Скрытозой кусабы 0 выпилил у себя всё cp и отправил соответствующий diff Скрытозою кусабы 1, но тот был другого мнения и откатил изменение назад и впредь не принимает diff'ы на удаление cp.
+</span><br>
+
+<br>
+Дополню. Это намного проще будет сделать на уровне досок. Допустим /sci/ и /mu/ - тянем, /cp/ - нет. Подтверждать <i>каждое</i> сообщение ты быстро устанешь.
+<br>
+
+<br>
+<span class="unkfunc">&gt;будучи анонимными никак не могут доверять друг другу
+</span><br>
+Не совсем. Советую посмотреть в сторону сетей доверия. Участник может быть анонимным, но идентифицируемым.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6366">&gt;&gt;6366</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6362" desu-post="6362">
+<a name="6362"></a>
+<label>
+<input type="checkbox" name="post[]" value="6362">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.10.2013 (Sun) 13:30:25
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6362" onclick="return highlight(&#39;6362&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6362" onclick="return insert(&#39;&gt;&gt;6362\n&#39;);">6362</a>
+
+</span><span class="DESU_postPanel" info="6362"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6362-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6356" onclick="return highlight(&#39;6356&#39;, true);" class="ref|i2p|5465|6356">&gt;&gt;6356</a>
+<br>
+<span class="unkfunc">&gt;А если Anonymous'у что то не понравится, он всегда может перейти в кусабу 10 или запилить свою и при этом не потерять ни текущую аудиторию, ни контент, так как они общие для всех кусаб настолько, насколько это позволяют их админы.
+</span><br>
+
+<br>
+Скажи, а каким образом будет осуществяться переход с пользовательской стороны на разные кусабы? с помощью доменных имен? например:
+<br>
+001.megachan.i2p - чан с /cp/,
+<br>
+002.megachan.i2p - чан с куклотредами,
+<br>
+003.megachan.i2p - тот же 002 но без куклотредов;
+<br>
+но в то же время /sci/, /mu/, /i2p/ у всех трех общий и сидя в /mu/ чана 003 (люблю кукол и цп), я общаюсь со всеми анонами досок перечисленных чанов. Если я правильно понял, то идея достойная.
+<br>
+
+<br>
+
+<br>
+p.s: а стоит ли брать именно кусабу? или это несущественно? всякие tinyboard'ы есть же.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6366">&gt;&gt;6366</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6366" desu-post="6366">
+<a name="6366"></a>
+<label>
+<input type="checkbox" name="post[]" value="6366">
+
+
+
+<span class="postername">Anonymous</span>
+
+13.10.2013 (Sun) 19:54:04
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6366" onclick="return highlight(&#39;6366&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6366" onclick="return insert(&#39;&gt;&gt;6366\n&#39;);">6366</a>
+
+</span><span class="DESU_postPanel" info="6366"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6366-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6361" onclick="return highlight(&#39;6361&#39;, true);" class="ref|i2p|5465|6361">&gt;&gt;6361</a><br>
+<span class="unkfunc">&gt; проще будет сделать на уровне досок</span><br>
+Так как синхронизация происходит на уровне сообщений, то ничего не мешает отфильтровывать отдельные сообщения по назначению, содержанию, трип-коду или на что ещё фантазии хватит.<br>
+Будет ли это проще\сложнее? Это уже детали конкретной реализации.<br>
+<br>
+<span class="unkfunc">&gt; посмотреть в сторону сетей доверия</span><br>
+Тема интересная, но полноценная, распределённая реализация такого алгоритма, не тривиальная задача (см. freenet WoT). К тому же хоть она и сильно снижает риски, но 100% гарантии не даёт.<br>
+Поэтому имхо. лучше всегда избегать решений основанных на доверии, насколько это возможно. "Доверяй, да проверяй".<br>
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6362" onclick="return highlight(&#39;6362&#39;, true);" class="ref|i2p|5465|6362">&gt;&gt;6362</a><br>
+Данное решение не предполагает никакого определённого способа перехода между серверами, поэтому каждый будет пилить как ему в голову взбрело. Т.е. Со стороны пользователя всё будет в точности как сейчас.<br>
+Только:<br>
+Доски, скорее всего, будут хоститься у модераторов.<br>
+Появится возможность сделать модератора одного или нескольких тредов или даже сообщений<span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">lol</span>.<br>
+Появится больше борд, так как их станет проще форкать и общих досок.<br>
+<br>
+Кусабу я привёл только для примера, в качестве сферического движка борды в вакууме, по идеи можно будет передавать сообщения с одной борды, бордам с другими движками и не только бордам.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6380" desu-post="6380">
+<a name="6380"></a>
+<label>
+<input type="checkbox" name="post[]" value="6380">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.10.2013 (Mon) 14:28:52
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6380" onclick="return highlight(&#39;6380&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6380" onclick="return insert(&#39;&gt;&gt;6380\n&#39;);">6380</a>
+
+</span><span class="DESU_postPanel" info="6380"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6380-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Что-то вас не в ту сторону понесло, милсдари.
+<br>
+
+<br>
+Начните с ясного списка требований к распределённой борде (он же - список хотелок). Прям берёте листик/пастебин/вику и пишете в столбик. Как-то:
+<br>
+
+<br>
+<ul><li>сколько должно быть дублей сообщений (1..N, где N - количество читателей)
+</li><li>требования к интерактивности общения (секунды/минуты/часы/...)
+</li><li>добровольная или принудительная анонимность
+</li><li>требования устойчивости к ddos'ам и атакам
+</li><li>максимальный размер пользовательской базы/числа нод ака горизонтальная масштабируемость (10^1..10^N)
+</li><li>возможность модерации/рейтинга сообщений&lt;del&gt;/кармы&lt;/del&gt;
+</li><li>&lt;moar&gt;
+</li><li>...
+</li><li>профит
+</li></ul>
+<br>
+Помните, что всё сразу реализовать невозможно, чем-то придётся пожертвовать.
+<br>
+
+<br>
+Под этот список уже подбираются конкретные технологии и строятся связи между ними, для начала - на уровне блоков. Пример схемы выше по треду - чуть более конкретен, чем надо.
+<br>
+
+<br>
+Представили себе полную модель - пишете прототип, отлавливаете практические недочёты в модели.
+<br>
+
+<br>
+Только после этого, с учётом набитых шишек - пишете готовую реализацию.
+<br>
+
+<br>
+А то обычно дело заканчивается неструктурированным списком хотелок гигантского размера. <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">что сейчас я и наблюдаю в треде</span>
+<br>
+
+<br>
+<span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">да, я, сцуко, капитанствую, но хули делать-то...</span><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6382">&gt;&gt;6382</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6382" desu-post="6382">
+<a name="6382"></a>
+<label>
+<input type="checkbox" name="post[]" value="6382">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.10.2013 (Mon) 18:07:58
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6382" onclick="return highlight(&#39;6382&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6382" onclick="return insert(&#39;&gt;&gt;6382\n&#39;);">6382</a>
+
+</span><span class="DESU_postPanel" info="6382"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6382-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6380" onclick="return highlight(&#39;6380&#39;, true);" class="ref|i2p|5465|6380">&gt;&gt;6380</a>
+<br>
+<i>Вероятность что кто-то переидет от обсуждения к непосредственно исполнению крайне мала.</i><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6391">&gt;&gt;6391</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6501">&gt;&gt;6501</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6385" desu-post="6385">
+<a name="6385"></a>
+<label>
+<input type="checkbox" name="post[]" value="6385">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.10.2013 (Mon) 21:03:34
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6385" onclick="return highlight(&#39;6385&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6385" onclick="return insert(&#39;&gt;&gt;6385\n&#39;);">6385</a>
+
+</span><span class="DESU_postPanel" info="6385"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6385-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Спасибо анону, заранее прочитавшему мой пост, который я хотел написать о целесообразности встраивания синхронизации прямо в db, <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">что бы не переписывать тучу клиетнов и велосипедов</span>, вернувщемуся с прощлое и написавшему вот это: <a href="http://http//www.rubyrep.org/">http://http://www.rubyrep.org/</a><br>
+<span class="unkfunc">&gt; Can implement both master-slave and master-master replication</span><br>
+<span class="unkfunc">&gt; Replication between more than two databases <span class="spoiler" onmouseover="this.style.color=&#39;white&#39;;" onmouseout="this.style.color=&#39;black&#39;">Только с PostgreSQL</span></span><br>
+<span class="unkfunc">&gt; Custom conflict resolution specifiable via ruby code snippets</span><br>
+<span class="unkfunc">&gt; Filter which differences to sync / replicate or execute custom sync / replication actions</span><br>
+Похоже как раз, то что надо.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6391" desu-post="6391">
+<a name="6391"></a>
+<label>
+<input type="checkbox" name="post[]" value="6391">
+
+
+
+<span class="postername">Anonymous</span>
+
+15.10.2013 (Tue) 03:23:34
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6391" onclick="return highlight(&#39;6391&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6391" onclick="return insert(&#39;&gt;&gt;6391\n&#39;);">6391</a>
+
+</span><span class="DESU_postPanel" info="6391"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6391-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6382" onclick="return highlight(&#39;6382&#39;, true);" class="ref|i2p|5465|6382">&gt;&gt;6382</a>
+<br>
+Я знаю, лол. Правило 1/10/100 же.
+<br>
+
+<br>
+Пока сам не возьмёшь и не сделаешь - хуй что изменится.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6501">&gt;&gt;6501</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6501" desu-post="6501">
+<a name="6501"></a>
+<label>
+<input type="checkbox" name="post[]" value="6501">
+
+
+
+<span class="postername">Anonymous</span>
+
+01.11.2013 (Fri) 10:01:26
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6501" onclick="return highlight(&#39;6501&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6501" onclick="return insert(&#39;&gt;&gt;6501\n&#39;);">6501</a>
+
+</span><span class="DESU_postPanel" info="6501"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6501-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6348" onclick="return highlight(&#39;6348&#39;, true);" class="ref|i2p|5465|6348">&gt;&gt;6348</a>
+<br>
+<span class="unkfunc">&gt;Но не в смысле пилить имиджборду на NNTP, а использовать его как прослойку между кусабой и её базой данных для синхронизации между серверами.
+</span><br>
+Но зачем, если NNTP специально заточен под обмен сообщениями?
+<br>
+
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6382" onclick="return highlight(&#39;6382&#39;, true);" class="ref|i2p|5465|6382">&gt;&gt;6382</a>
+<br>
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6391" onclick="return highlight(&#39;6391&#39;, true);" class="ref|i2p|5465|6391">&gt;&gt;6391</a>
+<br>
+Текстоборда с обменом сообщениями по NNTP уже есть, в принципе.
+<br>
+<a href="./ i2p - Распределенная имиджборда в I2P_files/137577453192.png" target="_blank" style=""><img class="DESU_preImg" src="./ i2p - Распределенная имиджборда в I2P_files/137577453192.png" alt="http://hiddenchan.i2p/i2p/src/137577453192.png" title="936x797" width="200" height="170"></a><a href="./ i2p - Распределенная имиджборда в I2P_files/137577453192.png">http://hiddenchan.i2p/i2p/src/137577453192.png</a><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6503">&gt;&gt;6503</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6503" desu-post="6503">
+<a name="6503"></a>
+<label>
+<input type="checkbox" name="post[]" value="6503">
+
+
+
+<span class="postername">Anonymous</span>
+
+01.11.2013 (Fri) 11:23:46
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6503" onclick="return highlight(&#39;6503&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6503" onclick="return insert(&#39;&gt;&gt;6503\n&#39;);">6503</a>
+
+</span><span class="DESU_postPanel" info="6503"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6503-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6501" onclick="return highlight(&#39;6501&#39;, true);" class="ref|i2p|5465|6501">&gt;&gt;6501</a><br>
+<span class="unkfunc">&gt; зачем, если NNTP специально заточен под обмен сообщениями?</span><br>
+Потому что он не заточен под всё остальное и не совместим с уже существующими движками.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6505">&gt;&gt;6505</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6505" desu-post="6505">
+<a name="6505"></a>
+<label>
+<input type="checkbox" name="post[]" value="6505">
+
+
+
+<span class="postername">Anonymous</span>
+
+01.11.2013 (Fri) 11:57:08
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6505" onclick="return highlight(&#39;6505&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6505" onclick="return insert(&#39;&gt;&gt;6505\n&#39;);">6505</a>
+
+</span><span class="DESU_postPanel" info="6505"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6505-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6503" onclick="return highlight(&#39;6503&#39;, true);" class="ref|i2p|5465|6503">&gt;&gt;6503</a>
+<br>
+Но ведь борда в любом случае будет читать сообщения из БД, а не напрямую с NNTP-сервера, потому что иначе придется каждый раз при генерации страницы обрабатывать разметку каждого сообщения.
+<br>
+
+<br>
+Скрипт отправки сообщения посылает текст на NNTP-сервер и запускает скрипт обновления борды. Скрипт обновления скачивает все новые сообщения с NNTP-сервера и вносит их в БД. Скрипт обновления так же запускается кроном каждые сколько-то минут. Так, по крайней мере, у меня было. Все остальное в борде с NNTP не связано и может работать без него, только отправку сообщения переписать придется.
+<br>
+
+<br>
+Возможно, надо было изначально переписывать кусабу, тем более что там тоже SQLite используется.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6510" desu-post="6510">
+<a name="6510"></a>
+<label>
+<input type="checkbox" name="post[]" value="6510">
+
+
+
+<span class="postername">Anonymous</span>
+
+01.11.2013 (Fri) 20:34:16
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6510" onclick="return highlight(&#39;6510&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6510" onclick="return insert(&#39;&gt;&gt;6510\n&#39;);">6510</a>
+
+</span><span class="DESU_postPanel" info="6510"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6510-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Уточню: я не вижу смысла делать диффы и ебаться с обработкой БД в таком виде, если можно просто брать NNTP article и вставлять его в БД как новое сообщение. Как я, собственно, и делал (по нескольким причинам).
+<br>
+
+<br>
+Я и предлагал договариваться о общем формате сообщения, потому что внутреннее (с точки зрения локального ПО) его представление может быть любое. Захотел - вставил в БД кусабы, вакабы, своей борды, или просто оставил лежать на NNTP сервере для желающих.
+<br>
+
+<br>
+Надо будет поднять на домашней машине Leafnode и дописать свой говнокод, наверное.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6513">&gt;&gt;6513</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6513" desu-post="6513">
+<a name="6513"></a>
+<label>
+<input type="checkbox" name="post[]" value="6513">
+
+
+
+<span class="postername">Anonymous</span>
+
+02.11.2013 (Sat) 00:33:39
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6513" onclick="return highlight(&#39;6513&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6513" onclick="return insert(&#39;&gt;&gt;6513\n&#39;);">6513</a>
+
+</span><span class="DESU_postPanel" info="6513"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6513-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6510" onclick="return highlight(&#39;6510&#39;, true);" class="ref|i2p|5465|6510">&gt;&gt;6510</a><br>
+Диффы нужны чтобы синхронизировать редактирование\удаление сообщений.<br>
+Для ебли с ДБ есть и готовые решения ввиде multi master replication. Kонечно их придётся допиливать под особенности i2p, но думаю оно того стоит, так как позволит прозрачно синхронизировать любые данные, будь то текстовые сообщения, каталог торрентов, регистрационные данные пользователей форума или магазина и т.д.<br>
+Общий формат сообщения наверное лучше будет сделать ввиде набора "field: value", где из обязательных полей только "message_uid" для аддресации\редактирования\удаления сообщения, а остальные (destination, author, topic, sage, text, attachments, ...) добавляются\читаются по мере необходимости\возможности.<br>
+А хранить сообщения одновременно и в БД кусабы и на NNTP сервере кажеться излишним.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6514">&gt;&gt;6514</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6515">&gt;&gt;6515</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6514" desu-post="6514">
+<a name="6514"></a>
+<label>
+<input type="checkbox" name="post[]" value="6514">
+
+
+
+<span class="postername">Anonymous</span>
+
+02.11.2013 (Sat) 10:45:04
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6514" onclick="return highlight(&#39;6514&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6514" onclick="return insert(&#39;&gt;&gt;6514\n&#39;);">6514</a>
+
+</span><span class="DESU_postPanel" info="6514"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6514-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6513" onclick="return highlight(&#39;6513&#39;, true);" class="ref|i2p|5465|6513">&gt;&gt;6513</a>
+<br>
+<span class="unkfunc">&gt;Диффы нужны чтобы синхронизировать редактирование\удаление сообщений.
+</span><br>
+Внезапно, заголовки "Supersedes: &lt;msgid&gt;" и "Control: cancel &lt;msgid&gt;".<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6515" desu-post="6515">
+<a name="6515"></a>
+<label>
+<input type="checkbox" name="post[]" value="6515">
+
+
+
+<span class="postername">Anonymous</span>
+
+02.11.2013 (Sat) 10:52:08
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6515" onclick="return highlight(&#39;6515&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6515" onclick="return insert(&#39;&gt;&gt;6515\n&#39;);">6515</a>
+
+</span><span class="DESU_postPanel" info="6515"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6515-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6513" onclick="return highlight(&#39;6513&#39;, true);" class="ref|i2p|5465|6513">&gt;&gt;6513</a>
+<br>
+<span class="unkfunc">&gt;А хранить сообщения одновременно и в БД кусабы и на NNTP сервере кажеться излишним.
+</span><br>
+Пиво тоже продают и в бутылках, и на разлив.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6527" desu-post="6527">
+<a name="6527"></a>
+<label>
+<input type="checkbox" name="post[]" value="6527">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.11.2013 (Mon) 12:07:26
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6527" onclick="return highlight(&#39;6527&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6527" onclick="return insert(&#39;&gt;&gt;6527\n&#39;);">6527</a>
+
+</span><span class="DESU_postPanel" info="6527"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6527-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138355604697.jpg" onclick="javascript:expandimg(&#39;6527&#39;, &#39;http://hiddenchan.i2p/i2p/src/138355604697.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138355604697s.jpg&#39;, &#39;360&#39;, &#39;270&#39;, &#39;200&#39;, &#39;150&#39;);return false;">
+
+138355604697.jpg</a>
+
+- (729.74KB
+
+, 360x270)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138355604697.jpg" onclick="javascript:expandimg(&#39;6527&#39;, &#39;http://hiddenchan.i2p/i2p/src/138355604697.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138355604697s.jpg&#39;, &#39;360&#39;, &#39;270&#39;, &#39;200&#39;, &#39;150&#39;);return false;">
+<span id="thumb6527"><img src="./ i2p - Распределенная имиджборда в I2P_files/138355604697s.jpg" alt="6527" class="thumb" height="150" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+Leafnode позиционируется как серверное ПО для дома и небольших сетей с несколькими юзерами. В отличие от INN, он не предназначен для news feeds, и топографически должен использоваться в периферийных сегментах сети, в "листьях". Однако он умеет скачивать сообщения из тех групп, к которым пользователь проявляет интерес, и отправлять ответы обратно на основной сервер.
+<br>
+
+<br>
+Я поднял Leafnode дома и настроил его на alt.privacy и alt.privacy.anon-server. Код борды пришлось немного потвикать. Зато сразу понятно, с какими проблемами столкнешься при разработке распределенной борды: треды, начальных сообщений которых нет, и, может, не будет, ответы, приходящие раньше оригинальных сообщений, и так далее.
+<br>
+
+<br>
+В рарджпеге содержимое ~/.i2p/eepsite/docroot и /var/spool/news. Ну как, похоже на борду?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6529">&gt;&gt;6529</a>, <a href="http://hiddenchan.i2p/i2p/res/5465.html#6530">&gt;&gt;6530</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6529" desu-post="6529">
+<a name="6529"></a>
+<label>
+<input type="checkbox" name="post[]" value="6529">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.11.2013 (Mon) 14:22:14
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6529" onclick="return highlight(&#39;6529&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6529" onclick="return insert(&#39;&gt;&gt;6529\n&#39;);">6529</a>
+
+</span><span class="DESU_postPanel" info="6529"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6529-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6527" onclick="return highlight(&#39;6527&#39;, true);" class="ref|i2p|5465|6527">&gt;&gt;6527</a>
+<br>
+В CSS у hr.thread_divider надо заменить значение border-color на #FFFFFF. Без яркого разделителя список тредов трудно читается...<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6530" desu-post="6530">
+<a name="6530"></a>
+<label>
+<input type="checkbox" name="post[]" value="6530">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.11.2013 (Mon) 16:59:13
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6530" onclick="return highlight(&#39;6530&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6530" onclick="return insert(&#39;&gt;&gt;6530\n&#39;);">6530</a>
+
+</span><span class="DESU_postPanel" info="6530"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6530-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6527" onclick="return highlight(&#39;6527&#39;, true);" class="ref|i2p|5465|6527">&gt;&gt;6527</a>
+<br>
+<span class="unkfunc">&gt;Ну как, похоже на борду?
+</span><br>
+Еще бы добавить изображения и форматирование.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6531">&gt;&gt;6531</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6531" desu-post="6531">
+<a name="6531"></a>
+<label>
+<input type="checkbox" name="post[]" value="6531">
+
+
+
+<span class="postername">Anonymous</span>
+
+04.11.2013 (Mon) 18:50:32
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6531" onclick="return highlight(&#39;6531&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6531" onclick="return insert(&#39;&gt;&gt;6531\n&#39;);">6531</a>
+
+</span><span class="DESU_postPanel" info="6531"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6531-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6530" onclick="return highlight(&#39;6530&#39;, true);" class="ref|i2p|5465|6530">&gt;&gt;6530</a>
+<br>
+<span class="unkfunc">&gt;добавить изображения
+</span><br>
+Придется поддержку MIME пилить. Сначала не хотел с ней париться, но похоже, без этого не обойтись.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6542" desu-post="6542">
+<a name="6542"></a>
+<label>
+<input type="checkbox" name="post[]" value="6542">
+
+
+
+<span class="postername">Anonymous</span>
+
+05.11.2013 (Tue) 14:23:47
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6542" onclick="return highlight(&#39;6542&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6542" onclick="return insert(&#39;&gt;&gt;6542\n&#39;);">6542</a>
+
+</span><span class="DESU_postPanel" info="6542"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6542-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138365062765.png" onclick="javascript:expandimg(&#39;6542&#39;, &#39;http://hiddenchan.i2p/i2p/src/138365062765.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138365062765s.png&#39;, &#39;974&#39;, &#39;1057&#39;, &#39;184&#39;, &#39;200&#39;);return false;">
+
+138365062765.png</a>
+
+- (486.85KB
+
+, 974x1057)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138365062765.png" onclick="javascript:expandimg(&#39;6542&#39;, &#39;http://hiddenchan.i2p/i2p/src/138365062765.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138365062765s.png&#39;, &#39;974&#39;, &#39;1057&#39;, &#39;184&#39;, &#39;200&#39;);return false;">
+<span id="thumb6542"><img src="./ i2p - Распределенная имиджборда в I2P_files/138365062765s.png" alt="6542" class="thumb" height="200" width="184"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+Запилил отображение картинок, пикрелейтед. Поддерживаются UUE и Base64. Логика работы: в multipart сообщениях ищется первый блок text/plain и считается текстом сообщения, потом ищется первая картинка, все остальное пока что игнорируется.
+<br>
+
+<br>
+Заодно и с Content-Encoding разобрался, и с кодировками типа ISO-8859-1.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6549" desu-post="6549">
+<a name="6549"></a>
+<label>
+<input type="checkbox" name="post[]" value="6549">
+
+
+
+<span class="postername">Anonymous</span>
+
+06.11.2013 (Wed) 18:30:17
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6549" onclick="return highlight(&#39;6549&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6549" onclick="return insert(&#39;&gt;&gt;6549\n&#39;);">6549</a>
+
+</span><span class="DESU_postPanel" info="6549"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6549-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Может просто склонировать Frost и добавить туда картинки?<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6550" desu-post="6550">
+<a name="6550"></a>
+<label>
+<input type="checkbox" name="post[]" value="6550">
+
+
+
+<span class="postername">Anonymous</span>
+
+06.11.2013 (Wed) 19:54:44
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6550" onclick="return highlight(&#39;6550&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6550" onclick="return insert(&#39;&gt;&gt;6550\n&#39;);">6550</a>
+
+</span><span class="DESU_postPanel" info="6550"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6550-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Хотя NNTP is fine too.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6551" desu-post="6551">
+<a name="6551"></a>
+<label>
+<input type="checkbox" name="post[]" value="6551">
+
+
+
+<span class="postername">Anonymous</span>
+
+06.11.2013 (Wed) 19:56:27
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6551" onclick="return highlight(&#39;6551&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6551" onclick="return insert(&#39;&gt;&gt;6551\n&#39;);">6551</a>
+
+</span><span class="DESU_postPanel" info="6551"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6551-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+Алсоу твой NNTP сервер нынче работает? Если чего, могу у себя поднять.<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6553">&gt;&gt;6553</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6553" desu-post="6553">
+<a name="6553"></a>
+<label>
+<input type="checkbox" name="post[]" value="6553">
+
+
+
+<span class="postername">Anonymous</span>
+
+07.11.2013 (Thu) 07:24:50
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6553" onclick="return highlight(&#39;6553&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6553" onclick="return insert(&#39;&gt;&gt;6553\n&#39;);">6553</a>
+
+</span><span class="DESU_postPanel" info="6553"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6553-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6551" onclick="return highlight(&#39;6551&#39;, true);" class="ref|i2p|5465|6551">&gt;&gt;6551</a>
+<br>
+<span class="unkfunc">&gt;Алсоу твой NNTP сервер нынче работает?
+</span><br>
+Ты про alphachan.i2p, metachan.i2p и т.д.? Нет, не работают. Я подозревал с самого начала, что с хостингом могут быть проблемы, потому и не регистрировал их на inr.i2p.
+<br>
+
+<br>
+<span class="unkfunc">&gt; Если чего, могу у себя поднять.
+</span><br>
+Давай. Я тогда свой Leafnode на него перенаправлю. Советую INN, если у тебя Linux. Под Windows из бесплатных есть Hamster, но я с ним никогда не сталкивался.
+<br>
+
+<br>
+Группы называй так: chan.&lt;language_code&gt;.&lt;long.board.name&gt;, например:
+<br>
+<ul><li>chan.ru.random
+</li><li>chan.en.programming
+</li><li>chan.en.programming.lisp
+</li><li>chan.en.random.moderated
+</li><li>etc
+</li></ul>
+<br>
+Если нужны исходники борды, дай мне пару дней, я запилю thumbnails для картинок и приведу код в порядок.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6554" desu-post="6554">
+<a name="6554"></a>
+<label>
+<input type="checkbox" name="post[]" value="6554">
+
+
+
+<span class="postername">Anonymous</span>
+
+07.11.2013 (Thu) 10:58:39
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6554" onclick="return highlight(&#39;6554&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6554" onclick="return insert(&#39;&gt;&gt;6554\n&#39;);">6554</a>
+
+</span><span class="DESU_postPanel" info="6554"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6554-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138381111986.png" onclick="javascript:expandimg(&#39;6554&#39;, &#39;http://hiddenchan.i2p/i2p/src/138381111986.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138381111986s.png&#39;, &#39;831&#39;, &#39;1058&#39;, &#39;157&#39;, &#39;200&#39;);return false;">
+
+138381111986.png</a>
+
+- (259.49KB
+
+, 831x1058)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138381111986.png" onclick="javascript:expandimg(&#39;6554&#39;, &#39;http://hiddenchan.i2p/i2p/src/138381111986.png&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138381111986s.png&#39;, &#39;831&#39;, &#39;1058&#39;, &#39;157&#39;, &#39;200&#39;);return false;">
+<span id="thumb6554"><img src="./ i2p - Распределенная имиджборда в I2P_files/138381111986s.png" alt="6554" class="thumb" height="200" width="157"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+Сделал thumbnails. Теперь похоже на борду. Могу выложить docroot и spool, только с бинарными группами они уже много весить начинают.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6628" desu-post="6628">
+<a name="6628"></a>
+<label>
+<input type="checkbox" name="post[]" value="6628">
+
+
+
+<span class="postername">Anonymous</span>
+
+14.11.2013 (Thu) 21:23:04
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6628" onclick="return highlight(&#39;6628&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6628" onclick="return insert(&#39;&gt;&gt;6628\n&#39;);">6628</a>
+
+</span><span class="DESU_postPanel" info="6628"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6628-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138445338489.gif" onclick="javascript:expandimg(&#39;6628&#39;, &#39;http://hiddenchan.i2p/i2p/src/138445338489.gif&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138445338489s.gif&#39;, &#39;216&#39;, &#39;323&#39;, &#39;134&#39;, &#39;200&#39;);return false;">
+
+138445338489.gif</a>
+
+- (24.55KB
+
+, 216x323)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138445338489.gif" onclick="javascript:expandimg(&#39;6628&#39;, &#39;http://hiddenchan.i2p/i2p/src/138445338489.gif&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138445338489s.gif&#39;, &#39;216&#39;, &#39;323&#39;, &#39;134&#39;, &#39;200&#39;);return false;">
+<span id="thumb6628"><img src="./ i2p - Распределенная имиджборда в I2P_files/138445338489s.gif" alt="6628" class="thumb" height="200" width="134"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://inr.i2p/search/?q=nntp-overchan.i2p">http://inr.i2p/search/?q=nntp-overchan.i2p</a><br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6634">&gt;&gt;6634</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6634" desu-post="6634">
+<a name="6634"></a>
+<label>
+<input type="checkbox" name="post[]" value="6634">
+
+
+
+<span class="postername">Anonymous</span>
+
+15.11.2013 (Fri) 20:34:24
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6634" onclick="return highlight(&#39;6634&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6634" onclick="return insert(&#39;&gt;&gt;6634\n&#39;);">6634</a>
+
+</span><span class="DESU_postPanel" info="6634"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6634-n"></span>
+<br><span class="filesize">
+Файл
+
+<span class="DESU_btnSrc" onmouseout="DESU_delSelection(event)"></span><a href="http://hiddenchan.i2p/i2p/src/138453686482.jpg" onclick="javascript:expandimg(&#39;6634&#39;, &#39;http://hiddenchan.i2p/i2p/src/138453686482.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138453686482s.jpg&#39;, &#39;500&#39;, &#39;446&#39;, &#39;200&#39;, &#39;178&#39;);return false;">
+
+138453686482.jpg</a>
+
+- (67.83KB
+
+, 500x446)
+
+
+</span>
+
+
+
+<br>
+<a target="_blank" href="http://hiddenchan.i2p/i2p/src/138453686482.jpg" onclick="javascript:expandimg(&#39;6634&#39;, &#39;http://hiddenchan.i2p/i2p/src/138453686482.jpg&#39;, &#39;http://hiddenchan.i2p/i2p/thumb/138453686482s.jpg&#39;, &#39;500&#39;, &#39;446&#39;, &#39;200&#39;, &#39;178&#39;);return false;">
+<span id="thumb6634"><img src="./ i2p - Распределенная имиджборда в I2P_files/138453686482s.jpg" alt="6634" class="thumb" height="178" width="200"></span>
+</a>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6628" onclick="return highlight(&#39;6628&#39;, true);" class="ref|i2p|5465|6628">&gt;&gt;6628</a>
+<br>
+Ну и штоэта?<br>
+
+
+</blockquote><div class="DESU_refMap"><a href="http://hiddenchan.i2p/i2p/res/5465.html#6636">&gt;&gt;6636</a></div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+<tbody>
+<tr>
+<td class="doubledash">
+&gt;&gt;
+</td>
+<td class="reply" id="reply6636" desu-post="6636">
+<a name="6636"></a>
+<label>
+<input type="checkbox" name="post[]" value="6636">
+
+
+
+<span class="postername">Anonymous</span>
+
+16.11.2013 (Sat) 07:21:40
+</label>
+
+<span class="reflink">
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6636" onclick="return highlight(&#39;6636&#39;);">No.&nbsp;</a><a href="http://hiddenchan.i2p/i2p/res/5465.html#i6636" onclick="return insert(&#39;&gt;&gt;6636\n&#39;);">6636</a>
+
+</span><span class="DESU_postPanel" info="6636"><span class="DESU_btnHide" onclick="DESU_hideClick(this)" onmouseover="DESU_hideOver(this)" onmouseout="DESU_delSelection(event)"></span><span class="DESU_btnRep" onclick="DESU_qReplyClick(this)" onmouseover="DESU_qReplyOver(this)"></span></span>
+<span class="extrabtns">
+
+
+</span>
+<span id="dnb-i2p-6636-n"></span>
+
+
+
+
+
+<blockquote>
+
+
+<a href="http://hiddenchan.i2p/i2p/res/5465.html#6634" onclick="return highlight(&#39;6634&#39;, true);" class="ref|i2p|5465|6634">&gt;&gt;6634</a>
+<br>
+Это американская поделка на тему NNTP-борды. Если я правильно понял, там несколько борд, доступных из clearnet (у них там свой DNS, правда), а nntp-overchan.i2p (который тоже доступен из clearnet), используя load balancer, перекидывает на ту борду, которая ближе к тебе или у которой меньшая нагрузка.
+<br>
+
+<br>
+По NNTP доступ они, я так понимаю, пока не дают. Возможно, не осилили настройку INN с аутентификацией. Авторов можно найти на #salt и #overchan.
+<br>
+
+<br>
+Что мне не нравится, так это то, что они используют иерархию групп, начинающуюся с overchan, и хэш Message-ID вместо номеров сообщений (то есть читать борду через NNTP можно, но трудно понять, кому конкретно отвечают). Я считаю, что если это так важно, то лучше генерировать короткие Message-ID. Как у них устроен threading, не знаю. Очевидно, все сообщения треда ссылаются на первое, как я делал поначалу (удобно для web-морды АИБ, неудобно с обычным клиентом вроде gnus или slrn).
+<br>
+
+<br>
+Очевидно, пора уже писать мануалы по настройке NNTP-серверов в I2P. Я вчера на работе игрался с Hamster Playground, там все куда как проще, чем с INN. Он предназначен для домашних мелких серверов, но если честно, то нам возможности держать full feed (как у всяких INN, Diablo, DNews) пока ни к чему.<br>
+
+
+</blockquote>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+<br clear="left">
+<hr>
+
+
+<table class="userdelete">
+<tbody>
+<tr>
+<td>
+Удалить пост
+[<input type="checkbox" name="fileonly" id="fileonly" value="on"><label for="fileonly">Только файл(ы)</label>]<br>Пароль
+<input type="password" name="postpassword" size="8">&nbsp;<input name="deletepost" value="Удалить" type="submit">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<script type="text/javascript"><!--
+set_delpass("delform");
+//--></script>
+
+
+<br>
+<div class="navbar">
+[
+<a title="random" href="http://hiddenchan.i2p/b/">b</a> / 
+<a title="random relaxed" href="http://hiddenchan.i2p/b2/">b2</a> / 
+<a title="board discuss" href="http://hiddenchan.i2p/d/">d</a> / 
+<a title="international" href="http://hiddenchan.i2p/int/">int</a> / 
+<a title="politics" href="http://hiddenchan.i2p/pol/">pol</a> / 
+<a title="test" href="http://hiddenchan.i2p/t/">t</a> / 
+<a title="wall of text" href="http://hiddenchan.i2p/txt/">txt</a>
+
+]
+[
+<a title="i2p internals" href="http://hiddenchan.i2p/i2p/">i2p</a> / 
+<a title="coding" href="http://hiddenchan.i2p/c/">c</a> / 
+<a title="software" href="http://hiddenchan.i2p/s/">s</a> / 
+<a title="invasion" href="http://hiddenchan.i2p/i/">i</a>
+
+]
+[
+<a title="central processors" href="http://hiddenchan.i2p/cp/">cp</a> / 
+<a title="girls non-cp" href="http://hiddenchan.i2p/g/">g</a> / 
+<a title="hentai" href="http://hiddenchan.i2p/h/">h</a>
+
+]
+[
+<a title="anime" href="http://hiddenchan.i2p/a/">a</a> / 
+<a title="medicine" href="http://hiddenchan.i2p/med/">med</a> / 
+<a title="criminal activities" href="http://hiddenchan.i2p/cri/">cri</a> / 
+<a title="exchange" href="http://hiddenchan.i2p/e/">e</a> / 
+<a title="music" href="http://hiddenchan.i2p/mu/">mu</a> / 
+<a title="science" href="http://hiddenchan.i2p/sci/">sci</a> / 
+<a title="videogames" href="http://hiddenchan.i2p/vg/">vg</a> / 
+<a title="books" href="http://hiddenchan.i2p/bo/">bo</a> / 
+<a title="end of world" href="http://hiddenchan.i2p/ew/">ew</a> / 
+<a title="painting" href="http://hiddenchan.i2p/pa/">pa</a> / 
+<a title="television" href="http://hiddenchan.i2p/tv/">tv</a>
+
+]
+
+
+</div>
+
+<br>
+<div class="footer" style="clear: both;">
+- <a href="http://kusabax.cultnet.net/" target="_top">kusaba x 0.9.3</a>
+ + Took 0.04s -
+
+</div><a name="bottom"></a>
+
+
+</body></html>

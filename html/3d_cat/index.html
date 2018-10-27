@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Copyright © Microsoft Corporation. All Rights Reserved. -->
+	<!-- Demo Author: Luke Hoban, Alexander Panov, Microsoft Corporation -->   
+	<!-- Image from iStockphoto®, loops7, binary code and computer monitors. -->
+	<!-- Image from iStockphoto®, 3dts, Sea composed by Binary code. -->
+	<!-- Video from iStockphoto®, ©mindopen, Binary Code Impact. Loop. -->
+	<!-- Music from iStockphoto®, ©WorkeGroup, Butterfly Lure. -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="IE10 Test Drive Demo" />
+    <meta name="t_omni_demopage" content="1" />
+    <title>Binary File Inspector</title>
+
+    <link rel="stylesheet" type="text/css" href="сss/BaseStyles.css" />
+    <link rel="stylesheet" type="text/css" href="css/DemoTemplate.css" />
+    <link rel="stylesheet" type="text/css" href="css/ReturnAndShareControls.css" />
+    <link rel="stylesheet" type="text/css" href="css/Demo.css" />
+    <link rel="shortcut icon" href="http://ie.microsoft.com/testdrive/Includes/Image/FavIcon.ico" />    
+
+	<SCRIPT src="js/browserInfo.js"></SCRIPT>
+	<SCRIPT src="js/binaryReader.js"></SCRIPT>
+	<SCRIPT src="js/DS3.js"></SCRIPT>
+	<SCRIPT src="Demo.js"></SCRIPT>
+  
+</head>
+<body onload="initPage();">
+    <div id="ReturnAndShareControls"></div>
+    <h1 id="DemoTitle">
+        Binary File Inspector
+    </h1>
+    <div id="DemoScreenreaderText">
+        Screenreader Text Goes Here
+    </div>
+	<div id="SupportWarning" style="display: none">
+		<br>
+		<h2>You need IE 10+, Chrome 12+ or Firefox 7+ to view this demo properly.</h2>
+	</div>
+    <div id="IntroWrapper" class="group" style="display:none">
+		<div id="FilePicker">
+			<div style="margin-top: 10px; padding: 10px">
+			<fieldset>
+				<ol>
+					<li>
+						<label class="itemLabel"for="serverFiles">Select a Server File:</label>
+						<select id="serverFiles" onchange='serverfileSelected()'>
+                        <option value="">Select...</option>
+						<option value="data/iStock_000016987294XSmall.jpg,image/jpeg">JPEG image file</option>
+							<option value="data/iStock_000014163436.mp3, audio/mpeg">MP3 audio</option>
+							<option value="data/iStock_000017276733Small We.mp4,video/mp4">MP4 video</option>
+							<option value="Default.html,text/html">HTML for this page</option>
+						</select>
+						<span class="helperText">To use XHR2 and Typed Arrays to inspect a file from the server.</span>
+					 </li>
+					<li>
+						<label class="itemLabel"for="fileInput">Select a Local File:</label>
+						<input name="fileInput" id="fileInput" type="file" onchange="localfileSelected()" />
+						<span class="helperText">To use the File API and Typed Arrays to inspect your file locally.</span>
+					</li>
+				 </ol>
+			</fieldset>
+			</div>
+		</div>       
+        <div id="IntroText">
+
+        </div>
+    </div>
+	<div class="clear"></div>
+	<br>
+	<div id="detailedView" style="display: none">
+		<div id="DetailsPreview">
+			<div style="margin-top: 10px; padding: 10px">
+			<div id="blobDisplay">
+			</div>
+			<div id="fileInformation">
+				<ol>
+					<li class="itemLabel">File name: <label style="font-weight: normal" id="fileName"></label></li>
+			   
+					<li class="itemLabel">Mime type: <span id="mimeType"></span></li>
+			   
+					<li class="itemLabel">File size: <span id="fileSize"></span></li>
+				
+					<li class="itemLabel" id="lastModifiedItem">Last modified: <span id="lastModified"></span></li>
+				</ol>
+			 </div>
+			 </div>
+		</div>
+		<div id="DetailsHex">
+			<div id="HexButtons">
+				<div style="float: left">
+					<h2>HEX view of file contents</h2>
+				</div>
+				<div style="float: left; width: 25px">
+					&nbsp
+				</div>
+				<div style="float: left">
+					<div id="Prev" class="myButtonGrey" onclick="clickPrev()" onmousedown="return false;" onselectstart="return false;"><- Prev</div>
+				</div>
+				<div style="float: left; width: 25px">
+					&nbsp
+				</div>
+				<div style="float: left">
+					<div id="Next" class="myButton" onclick="clickNext()" onmousedown="return false;" onselectstart="return false;">Next -></div>
+				</div>
+			</div>
+			<div id="hexGrid"></div>
+		</div>
+	</div>
+</body>
+</html>

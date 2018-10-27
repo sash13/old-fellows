@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="http://dl.dropbox.com/u/1664148/js/colorpicker.js"></script>
+  </head>
+  <body>
+      <body onLoad="init()">
+    
+       <ol id="drag-zone">
+           <!--<li><img src="https://dl.dropbox.com/u/1664148/image/pripeclo/1270819701.png" draggable class="copy" /></li>-->
+           <li><img src="http://jsrun.it/assets/w/N/t/F/wNtFC.png"  draggable class="copy" /></li>
+           <li><img src="http://dl.dropbox.com/u/1664148/image/pripeclo/1270820267.png"  draggable class="copy" /></li>
+           <li><img src="http://dl.dropbox.com/u/1664148/image/pripeclo/1275330450.png"  draggable class="copy" /></li>
+           <li><img src="http://dl.dropbox.com/u/1664148/image/pripeclo/1275756898.png"  draggable class="copy" /></li>
+           <li><img src="http://dl.dropbox.com/u/1664148/image/pripeclo/12632102213951.png"  draggable class="copy" /></li>
+       </ol>
+    <div id="container">
+     
+    <canvas id="canvas" width="604" height="377">
+    This text is displayed if your browser does not support HTML5 Canvas.
+    </canvas>
+    
+   </div>
+    <p><label>Выберите: <select id="sel_obj_color">
+        <option value="line">Линии</option>
+        <option value="bg">Фон</option>
+    </select></label></p>
+          
+        <div id="picker2" class="picker"></div>
+        <div id="slide2" class="slide"></div>
+
+  <div id="controlls">
+      	<textarea name="text" id="text"></textarea></p>
+  		<button onclick="addText();return true;">Add Text</button>  
+        <button onclick="mySelText.update();return true;">Update Text</button> 
+        <button onclick="mySelText.del();return true;">Del Text</button> 
+        
+  </div>
+  <button onclick="mySel.del();return true;">Del Object</button> 
+  <div id="button">
+        </div>
+
+  </body>
+</html>

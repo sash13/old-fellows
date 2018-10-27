@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+</head>
+  
+<body>
+
+<video id="video" width="640" height="480" autoplay></video>
+<canvas id="canvas" width="640" height="480"></canvas> 
+<div id="button">
+        </div> 
+</br>
+<canvas id="canvas2" width="640" height="480"></canvas>
+</br>
+<script>
+// Put event listeners into place
+
+//http://beej.us/blog/data/html5s-canvas-2-pixel/
+function setPixel(imageData, x, y, r, g, b, a) {
+    index = (x + y * imageData.width) * 4;
+    imageData.data[index+0] = r;
+    imageData.data[index+1] = g;
+    imageData.data[index+2] = b;
+    imageData.data[index+3] = a;
+}
+
+//http://ejohn.org/blog/ocr-and-neural-nets-in-javascript/
+function convert_grey(imageData){
+  for (var x = 0; x < imageData.width; x++){
+    for (var y = 0; y < imageData.height; y++){
+      var i = x*4+y*4*imageData.width;
+      var luma = Math.floor(imageData.data[i] * 299/1000 +
+        imageData.data[i+1] * 587/1000 +
+        imageData.data[i+2] * 114/1000);
+      imageData.data[i] = luma;
+      imageData.data[i+1] = luma;
+      imageData.data[i+2] = luma;
+      imageData.data[i+3] = 255;
+    }
+  }
+}
+
+function find_fun(imageData,imageData2, koe_fri, koe_size){
+  var ki=0;
+  for (var x = 0; x < imageData.width; x++){
+    for (var y = 0; y < imageData.height; y++){
+	setPixel(imageData2, x, y, 0, 0, 0, 255);
+      var i = x*4+y*4*imageData.width;
+      	if (y+1 <= (imageData.height-1)) {
+      		dif = ((imageData.data[i]+1)/(imageData.data[i+4*imageData.width]+1)) |0;
+		//alert(dif);
+		if ((dif < (koe_fri+1)) && (dif > (1-koe_fri))) {
+			ki+=1;
+			if (ki < koe_size) {
+				//setPixel(imageData, x, y, 255, 255, 255, 255);
+				setPixel(imageData2, x, y, 255, 255, 255, 255);
+				ki=0;
+			}
+		}
+	}
+    }
+  }
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+	// Grab elements, create settings, etc.
+	var canvas = document.getElementById("canvas"),
+		context = canvas.getContext("2d"),
+		canvas2 = document.getElementById("canvas2"),
+		context2 = canvas.getContext("2d"),
+		video = document.getElementById("video"),
+		element = document.getElementById('value'),
+		videoObj = { "video": true },
+		bgImg,
+		errBack = function(error) {
+			console.log("Video capture error: ", error.code); 
+		};
+	video.style.display = "none"
+	// Put video listeners into place
+	if(navigator.getUserMedia) { // Standard
+		navigator.getUserMedia(videoObj, function(stream) {
+			video.src = stream;
+			video.play();
+		}, errBack);
+	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+		navigator.webkitGetUserMedia(videoObj, function(stream){
+			video.src = window.webkitURL.createObjectURL(stream);
+			video.play();
+		}, errBack);
+	}
+
+	removeBG = function(){
+		//ctx = canvas.getContext("2d");
+
+		var imgd = context.getImageData(0, 0, 640, 480),
+		    imageData = context2.createImageData(640, 480);
+        convert_grey(imgd);
+
+	find_fun(imgd,imageData, 0.5, 25);
+	
+		context.putImageData(imageData, 0, 0);
+
+	}
+
+	// Trigger photo take
+	play = function() {
+		context.drawImage(video, 0, 0, 640, 480);
+		removeBG();
+		setTimeout(play, 200);
+	}
+
+var saveImage = document.createElement("button");
+saveImage.innerHTML = "Get Photo";
+saveImage.addEventListener("click", function (evt) {
+    window.open(canvas.toDataURL("image/png"));
+}, false);
+document.getElementById("button").appendChild(saveImage);
+
+
+	play();
+}, false);
+
+</script>
+</body>
+</html>

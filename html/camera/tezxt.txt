@@ -1,0 +1,4 @@
+http://software.intel.com/en-us/blogs/2013/06/14/masking-rgb-inputs-with-depth-data-using-the-intel-percc-sdk-and-opencv
+http://research.microsoft.com/pubs/67890/siggraph04-grabcut.pdf
+http://en.pudn.com/downloads96/sourcecode/graph/texture_mapping/detail393220_en.html
+http://www.maths.lth.se/matematiklth/personal/petter/rapporter/grabcut.pdf

@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Dance</title>
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="500" height="281">
+	<img src="https://dl.dropbox.com/u/43123609/28377283.jpg">
+        </canvas>
+    </div>
+
+<script type="text/javascript">
+var canvas;  
+var ctx;
+var audioElement;
+var WIDTH = 500;
+var HEIGHT = 281; 
+var img_index=0;
+var image;
+var IMAGE_URL = 'https://dl.dropbox.com/u/43123609/28377283.jpg';
+    
+    
+function clear() {
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+    
+function loadImage(url) {
+    var image = new Image();
+    image.src = url + '?' + new Date().getTime();
+    return image;
+}
+    
+function init() {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  image = loadImage(IMAGE_URL);
+    canvas.onresize = function() {
+alert(test);
+
+}
+  return setInterval(draw, 50);
+}
+
+
+function draw() {
+  clear();
+  WIDTH= window.innerWidth;
+  HEIGHT =window.innerHeight;
+  ctx.canvas.width  = WIDTH-30;
+  ctx.canvas.height = HEIGHT-30;
+ctx.scale(WIDTH/1279, WIDTH/1279);
+  ctx.drawImage(image,0,0);
+ 
+}
+
+init();
+</script>
+
+  </section>
+</body>
+</html

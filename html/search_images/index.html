@@ -1,0 +1,112 @@
+﻿<html>
+<head>
+  <style type="text/css">
+   .thumb img {
+    margin-right: 10px;
+    margin-bottom: 10px;
+   }
+  </style>
+<script type="text/javascript" src="Stuk-jszip-ad1627a/jszip.js"></script>
+<script type="text/javascript" src="Stuk-jszip-ad1627a/jszip-deflate.js"></script>
+
+<script type="text/javascript">
+var zip = new JSZip(),
+    folder = zip.folder("images"),
+    url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0',
+    images = [],
+    counts =0;
+
+    // simplest JSONP request implementation
+function jsonp (url, type, callback) {
+    var name = "jsonp" +  +new Date,
+        script = document.createElement(type),
+        head = document.getElementsByTagName("head")[0];
+    window[name] = callback;
+    script.src = url.replace(/=\?/, "=" + name);
+    if(type == 'img') {
+        script.onload = function() {
+            alert(getBase64Image(script))
+        }
+    }
+    head.insertBefore(script, head.firstChild);
+}
+
+function getMore (url_in) {
+    text = document.getElementById('fname').value;
+	n_url= url_in+'&q='+ text+ '&start=' + counts+'&callback=?';
+	jsonp(n_url, "script", function (data) { 
+    		for (var i = 0; i < 4; i++) {
+			pr_data = data['responseData'].results[i];
+ 			images[images.length] = [pr_data.tbUrl,pr_data.url];
+			image = document.createElement("img");
+			image.src = pr_data.tbUrl;
+			document.getElementById("images").appendChild(image);
+		}
+	});
+	counts+=4;
+}
+
+function addToFolder(file_name, image_base64) { 
+    folder.file(file_name, image_base64, {base64: true});
+}
+
+function loadImage(url_in) {
+    var image = new Image();
+    alert('test');
+    jsonp(url_in+'?callback=?', "img", function (data_s) { 
+    alert('test');
+       
+  });
+
+}
+
+function getZip () {
+	for (var i = 0; i < images.length; i++) {
+
+		//folder.file(file_name, loadImage(images[i][1]), {base64: true});
+		//loadImage(images[0][1]);
+        window.location.href=images[i][1];
+	}
+    //alert('test1');
+    //alert(getBase64Image(loadImage(images[1][1])))
+	//var content = zip.generate();
+	//location.href="data:application/zip;base64,"+content;
+	
+}
+
+//http://stackoverflow.com/questions/934012/get-image-data-in-javascript
+function getBase64Image(img) {
+    // Create an empty canvas element
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Copy the image contents to the canvas
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    // Get the data-URL formatted image
+    // Firefox supports PNG and JPEG. You could check img.src to
+    // guess the original format, but be aware the using "image/jpg"
+    // will re-encode the image.
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+	//return dataURL;
+}
+
+//getMore (url);
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="СКОЧАТЬ БЕЗ СМС" onclick="getZip()" />
+
+<p class="thumb" id ="images">
+
+</p>
+<input type="text" id="fname"  />
+<input type="button" value="Еще" onclick="getMore(url)" />
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>demo</title>
+  
+</head>
+<body>
+  <canvas id="canvas" width="200", height="200">
+<img src="https://dl.dropbox.com/u/1664148/html/ava_make/sample.png">
+</canvas>   <div id="buttons">
+        </div>
+
+<script type='text/javascript'>
+
+function setPixel(x, y, r, g, b ,a) {
+    c.fillStyle = 'rgba('+r+',' + g + ','+ b+','+a+')';
+    c.fillRect(x,y,1,1);
+}
+
+function line_By_new(x1,y1,x2,y2) {
+    if (x2<x1) {
+      x1 = -(x2 = (x1 += x2) - x2) + x1;
+    };
+    if (y2<y1) {
+      y1 = -(y2 = (y1 += y2) - y2) + y1;
+    };
+
+    deltax = x2-x1;
+    deltay = y2-y1;
+
+    if (deltay<deltax) {
+        if (x2<x1) {
+            
+        };
+        gradient = deltay/deltax;
+    } else{
+
+    };
+
+
+    xend = Math.ceil(x1);
+    yend = y1 + gradient*(xend-x1);
+    xgap = 1 - ((x1+0.5)%1);
+    xpxl1 = xend;
+    ypxl1 = Math.round(yend);
+    grad1 = (1-(yend%1)*xgap);
+    grad2 = (yend%1)*xgap;
+    setPixel(xpxl1, ypxl1, 0,0,0, grad1);
+    setPixel(xpxl1, ypxl1+1, 0, 0,0, grad2);
+    intery = yend + gradient; 
+
+    xend = Math.ceil(x2);
+    yend = y2 + gradient*(xend-x2);
+    xgap = (x2+0.5)%1;
+    xpxl2 = xend;
+    ypxl2 = Math.round(yend);
+    grad1 = (1-(yend%1)*xgap);
+    grad2 = (yend%1)*xgap;
+    setPixel(xpxl2, ypxl2, 0,0,0, grad1);
+    setPixel(xpxl2, ypxl2+1, 0, 0,0, grad2);
+
+    for (var i = xpxl1+1; i < xpxl2-1; i++) {
+        grad1 = (1-(intery%1));
+        grad2 = (intery%1);
+        setPixel(i, Math.round(intery), 0,0,0, grad1);
+        setPixel(i, Math.round(intery)+1, 0,0,0, grad2);
+        intery = intery + gradient;
+    };
+}
+
+function line_By(x1,y1,x2,y2) {
+    if (x2<x1) {
+      x1 = -(x2 = (x1 += x2) - x2) + x1;
+    };
+    if (y2<y1) {
+      y1 = -(y2 = (y1 += y2) - y2) + y1;
+    };
+
+    deltax = x2-x1;
+    deltay = y2-y1;
+    gradient = deltay/deltax;
+
+    xend = Math.ceil(x1);
+    yend = y1 + gradient*(xend-x1);
+    xgap = 1 - ((x1+0.5)%1);
+    xpxl1 = xend;
+    ypxl1 = Math.round(yend);
+    grad1 = (1-(yend%1)*xgap);
+    grad2 = (yend%1)*xgap;
+    setPixel(xpxl1, ypxl1, 0,0,0, grad1);
+    setPixel(xpxl1, ypxl1+1, 0, 0,0, grad2);
+    intery = yend + gradient; 
+
+    xend = Math.ceil(x2);
+    yend = y2 + gradient*(xend-x2);
+    xgap = (x2+0.5)%1;
+    xpxl2 = xend;
+    ypxl2 = Math.round(yend);
+    grad1 = (1-(yend%1)*xgap);
+    grad2 = (yend%1)*xgap;
+    setPixel(xpxl2, ypxl2, 0,0,0, grad1);
+    setPixel(xpxl2, ypxl2+1, 0, 0,0, grad2);
+
+    for (var i = xpxl1+1; i < xpxl2-1; i++) {
+        grad1 = (1-(intery%1));
+        grad2 = (intery%1);
+        setPixel(i, Math.round(intery), 0,0,0, grad1);
+        setPixel(i, Math.round(intery)+1, 0,0,0, grad2);
+        intery = intery + gradient;
+    };
+}
+
+function line(x1,y1,x2,y2) {
+    if (x2<x1) {
+      x1 = -(x2 = (x1 += x2) - x2) + x1;
+    };
+    if (y2<y1) {
+      y1 = -(y2 = (y1 += y2) - y2) + y1;
+    };
+    deltax = Math.abs(x2-x1);
+    deltay = Math.abs(y2-y1);
+    error_s = 0;
+    deltaerr = deltay;
+    y = y1;
+    for (var i = x1; i <= x2; i++) {
+        setPixel(i,y,125,124,125);
+        error_s+=deltaerr;
+        if (2*error_s>=deltax) {
+            y=y+1;
+            error_s-=deltax;
+        };
+    };
+}
+
+function init() {
+    element = document.getElementById("canvas");
+    c = element.getContext("2d");
+    //update();
+    //line(150,200,10,5);
+    line(0,50,200,190);
+    line_By(0,50,200,200);
+    //line(50,60,10,150);
+    //line_By(50,60,10,150);
+    //line(8, 200,200,10);
+    /*var saveImage = document.createElement("button");
+    saveImage.innerHTML = "Save Image";
+    saveImage.addEventListener("click", function (evt) {
+        window.open(element.toDataURL("image/png"));
+    }, false);
+    document.getElementById("buttons").appendChild(saveImage);
+
+    var updateImage = document.createElement("button");
+    updateImage.innerHTML = "Update";
+    updateImage.addEventListener("click", function (evt) {
+        update();
+    }, false);
+    document.getElementById("buttons").appendChild(updateImage);
+*/
+}
+
+init();
+ 
+
+</script>
+
+
+</body>
+</html>

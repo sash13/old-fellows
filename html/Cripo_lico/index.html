@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>demo</title>
+  
+  <style type='text/css'>
+    
+  </style>
+  
+</head>
+<body>
+  <canvas id="canvas" width="100", height="100">
+Canvas
+</canvas>   <div id="button">
+        </div> <br><br><br>
+  <canvas id="canvas1" width="100", height="100">
+Canvas
+</canvas>
+
+<script type='text/javascript'>
+//http://beej.us/blog/data/html5s-canvas-2-pixel/
+function setPixel(imageData, x, y, r, g, b, a) {
+    index = (x + y * imageData.width) * 4;
+    imageData.data[index+0] = r;
+    imageData.data[index+1] = g;
+    imageData.data[index+2] = b;
+    imageData.data[index+3] = a;
+}
+function loadImage(url) {
+    var image = new Image();
+    image.onload = function() {
+        // stamp the image on the left of the canvas:
+        element.height = image.height;
+        element.width = image.width;
+
+        canvas.height = image.height;
+        canvas.width = image.width;
+
+        width = element.width;
+        height = element.height;
+
+        c.drawImage(image, 0, 0);
+        // get all canvas pixel data
+        imageData = c.getImageData(0, 0, width, height);
+	imageData2 = ctx.createImageData(width, height);
+        convert_grey(imageData);
+
+	find_fun(imageData,imageData2, 0.5, 25);
+        // put pixel data on canvas
+        //c.putImageData(imageData, 0, 0);
+	c.putImageData(imageData2, 0, 0);
+    };
+    image.src = url;
+}
+//http://ejohn.org/blog/ocr-and-neural-nets-in-javascript/
+function convert_grey(imageData){
+  for (var x = 0; x < imageData.width; x++){
+    for (var y = 0; y < imageData.height; y++){
+      var i = x*4+y*4*imageData.width;
+      var luma = Math.floor(imageData.data[i] * 299/1000 +
+        imageData.data[i+1] * 587/1000 +
+        imageData.data[i+2] * 114/1000);
+      imageData.data[i] = luma;
+      imageData.data[i+1] = luma;
+      imageData.data[i+2] = luma;
+      imageData.data[i+3] = 255;
+    }
+  }
+}
+
+function find_fun(imageData,imageData2, koe_fri, koe_size){
+  var ki=0;
+  for (var x = 0; x < imageData.width; x++){
+    for (var y = 0; y < imageData.height; y++){
+	setPixel(imageData2, x, y, 0, 0, 0, 255);
+      var i = x*4+y*4*imageData.width;
+      	if (y+1 <= (imageData.height-1)) {
+      		dif = ((imageData.data[i]+1)/(imageData.data[i+4*imageData.width]+1)) |0;
+		//alert(dif);
+		if ((dif < (koe_fri+1)) && (dif > (1-koe_fri))) {
+			ki+=1;
+			if (ki < koe_size) {
+				//setPixel(imageData, x, y, 255, 255, 255, 255);
+				setPixel(imageData2, x, y, 255, 255, 255, 255);
+				ki=0;
+			}
+		}
+	}
+    }
+  }
+}
+
+function init() {
+    element = document.getElementById("canvas");
+    c = element.getContext("2d");
+
+    element.addEventListener( 'dragover', function ( evt ) {
+        evt.preventDefault();
+    }, false );
+    element.addEventListener( 'drop', getfiles, false );
+
+    canvas = document.getElementById('canvas1');
+    ctx = canvas.getContext('2d');
+    c.strokeText('Drope file here', 10, 10);
+  function getfiles( ev ) {
+    var files = ev.dataTransfer.files,
+        url = window.URL || window.webkitURL,
+        objURL = url.createObjectURL || false;
+
+    if ( files.length > 0 ) {
+      var i = files.length;
+      while ( i-- ) {
+        var file = files[ i ];
+        if ( file.type.indexOf( 'image' ) === -1 ) { continue; }
+        if(objURL) {
+          loadImage(url.createObjectURL(file));
+        } else {
+          var reader = new FileReader();
+          reader.readAsDataURL( file );
+          reader.onload = function ( ev ) {
+            loadImage(ev.target.result);
+          };
+        }
+      }
+    }
+    ev.preventDefault();
+  }
+
+var saveImage = document.createElement("button");
+saveImage.innerHTML = "Save Image";
+saveImage.addEventListener("click", function (evt) {
+    window.open(element.toDataURL("image/png"));
+}, false);
+document.getElementById("button").appendChild(saveImage);
+
+    //loadImage('6a00e550199efb8833010536a5483e970c-800wi.jpg');
+}
+
+init();
+
+</script>
+
+
+  
+</body>
+
+
+</html>
+
+

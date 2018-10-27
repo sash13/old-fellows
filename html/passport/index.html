@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://dyn.ig.rambler.ru/translit/ -->
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ch ch36"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Транслитерируй это</title>
+    <meta name="description" content="Infographic Template">
+    <meta name="author" content="German Gurov">
+    <meta name="type" content="infographic">
+
+    <!--Settings for Facebook-->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=2.0; user-scalable=yes;">
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" href="./pok/bootstrap.min.css">
+    <link rel="stylesheet" href="./pok/main.min.css">
+
+<script>
+   function pok() {
+       document.getElementById('logo').click();
+   }
+   function pokpok() {
+        var preview = document.getElementById('face');
+  	var file    = document.querySelector('input[type=file]').files[0];
+  	var reader  = new FileReader();
+
+  	reader.onloadend = function () {
+  	  preview.src = reader.result;
+  	}
+
+  	if (file) {
+  	  reader.readAsDataURL(file);
+  	} else {
+  	  preview.src = "";
+  	}
+   }
+</script>
+
+<style type="text/css"></style></head>
+<body>
+	<div id="ig">
+        <div class="content">
+            <!--example content start here-->
+            <div class="header">Транслитерируй это</div>
+            <div class="enterFields">
+                <div class="input-group">
+                    <input type="text" class="form-control inSurname" placeholder="Фамилия">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control inName" placeholder="Имя">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control inSecName" placeholder="Отчество">
+                </div>
+                <div>
+                    <button class="enterBtn btn-default">Транслитерировать</button>
+                </div>
+            </div>
+            <div class="pass">
+<div style="position: absolute; left: 37px; top: 101px; z-index: 10;">
+<img width="156" height="214" src="./pok/p.png" onclick="pok();" id="face">
+<input type="file" id="logo" style="display:none" onchange="pokpok()"> 
+<!--<img width="156" height="214" src="./pok/p.png" onclick="alert('test');"> -->
+</div> 
+                <img src="./pok/pass.png">
+                <div class="result">
+                    <div class="surname">ФАМИЛИЯ /<br>surname</div>
+                    <div class="name">ИМЯ ОТЧЕСТВО /<br>name</div>
+                    <div class="together">р&lt;rusFamiliia&lt;&lt;Imia&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>XXXXXXXXXXRUSXXXXXXXXXXXXXXXXXXXXXXXX&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;14</div>
+                </div>
+            </div>
+
+            <div class="rulBtn">новые правила транслитерации</div>
+            <div class="rules">
+                <div class="wrapper">
+                    <div class="closeblock"></div>
+                </div>
+                <img src="./pok/rules.png">
+                <div class="title">новые правила транслитерации</div>
+                <div class="close"></div>
+            </div>
+
+
+
+
+
+            <!--example content stop here-->
+            <div class="credits">
+                <div class="design">Рамблер Инфографика</div>
+                <div class="logo"><img src="./pok/logo.png"></div>
+            </div>
+        </div>
+	</div>
+    <p id="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <div class="debug-panel"></div>
+
+    <!--Developer script-->
+    <!--<script src="bower/modernizr/modernizr.js"></script>
+    <script src="bower/underscore/underscore.js"></script>
+    &lt;!&ndash;<script src="bower/d3/d3.js"></script>&ndash;&gt;
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <script src="js/components/support.js"></script>
+    <script src="js/user/bootstrap.min.js"></script>
+    <script src="js/user/main.js"></script>-->
+
+    <!--Production script-->
+	<script src="./pok/main.min.js"></script>
+
+</body><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style></html>

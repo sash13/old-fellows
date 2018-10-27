@@ -1,0 +1,52 @@
+.module {
+
+  	background: #FFFFFF;
+  	text-align: center;
+  	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.box {
+	width: 150px;
+	height: auto;
+  	border: 3px solid;
+  	background: #FFFFFF;
+    display: inline;
+    display: inline-block;
+
+}
+
+[data-icon]:before {
+  font-family: icons; /* BYO icon font, mapped smartly */
+  font-size: 400%;
+  content: attr(data-icon);
+  speak: none; /* Not to be trusted, but hey. */
+}
+
+body {
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+input[type="submit"]{
+  width: 90%;
+  background: #fff;
+  border: 1px solid #000;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.btn {
+  -webkit-border-radius: 40;
+  -moz-border-radius: 40;
+  border-radius: 26px;
+  background: #3498db;
+  padding: 9px 20px 15px 20px;
+  text-decoration: none;
+  margin: 50px;
+width: 100%
+}
+
+.btn:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>bin</title>
+    <script type="text/javascript" src="convfunctions.js"></script>
+  </head>
+<body>
+
+<textarea name="text" id="text"></textarea></p>
+
+<div id="button">
+	<button onclick="addText('');return true;">Add Text</button>  
+</div>
+
+<canvas id="canvas" width="270" height="281" style="border:1px solid #d3d3d3;">
+This text is displayed if your browser 
+does not support HTML5 Canvas.
+<img src="http://dl.dropbox.com/u/1664148/html/bin_bin/up.png">
+</canvas>
+
+
+<script type="text/javascript">
+var canvas;  
+var ctx;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	ctx = canvas.getContext("2d");
+
+	//addText("еби гусей")
+}
+
+function addText(text) {
+	if(text=="") text = document.getElementById('text').value;
+	var incr= 0; 
+	canvas.height = 40*text.length+10;
+	for(incr;incr<=text.length;incr++) {
+		ch = text.charAt(incr);
+		
+		str = Convert.toBin(ch);
+		ctx.font="30px Arial";
+		//alert(str)
+		ctx.fillText(str,10,40*incr+40);
+	}
+
+}
+
+init();
+var saveImage = document.createElement("button");
+saveImage.innerHTML = "Save Image";
+saveImage.addEventListener("click", function (evt) {
+    window.open(canvas.toDataURL("image/png"));
+}, false);
+document.getElementById("button").appendChild(saveImage);
+
+</script>
+</body>
+</html

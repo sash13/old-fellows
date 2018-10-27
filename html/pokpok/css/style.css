@@ -1,0 +1,92 @@
+* {
+  @include box-sizing(border-box);
+}
+
+$pad: 20px;
+
+.grid {
+  background: white;
+  margin: 0 0 $pad 0;
+  
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+	float: left;
+  padding-right: $pad;
+  .grid &:last-of-type {
+  	padding-right: 0;
+  }
+}
+
+.col-2-3 {
+	width: 66.66%;
+}
+.col-1-3 {
+	width: 33.33%;
+}
+.col-1-2 {
+	width: 50%;
+}
+.col-1-4 {
+	width: 25%;
+}
+.col-1-8 {
+	width: 12.5%;
+}
+
+.module {
+  	display: block;
+  	height: 10%;
+  	background: #00ff00;
+  	text-align: center;
+}
+
+.box {
+	width: 100%;
+	/*width: 85px;*/
+	/*height: 100%;*/
+  	border: 1px solid;
+  	background: #FFFFFF;
+    display: inline;
+    display: inline-block;
+
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+  padding: $pad 0 $pad $pad;
+  [class*='col-']:last-of-type {
+    padding-right: $pad;
+  }
+}
+
+[data-icon]:before {
+  font-family: icons; /* BYO icon font, mapped smartly */
+  font-size: 300%;
+  content: attr(data-icon);
+  speak: none; /* Not to be trusted, but hey. */
+}
+body {
+    background-color: #FFFFFF;
+}
+
+.btn {
+  -webkit-border-radius: 40;
+  -moz-border-radius: 40;
+  border-radius: 26px;
+  background: #3498db;
+  padding: 9px 20px 15px 20px;
+  text-decoration: none;
+  margin: 50px;
+width: 100%
+}
+
+.btn:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Dance</title>
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="500" height="281">
+         This text is displayed if your browser 
+         does not support HTML5 Canvas.
+	<img src="http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image1.jpg">
+        </canvas>
+    <audio preload="auto" autobuffer autoplay="autoplay" loop="loop">
+  <source src="http://dl.dropbox.com/u/1664148/html/PuchPuch/out.ogg" type='audio/ogg; codecs=vorbis'>
+  <source src="http://dl.dropbox.com/u/1664148/html/PuchPuch/sound27.mp3" type="audio/mpeg"/>
+</audio>
+    </div>
+
+<script type="text/javascript">
+var canvas;  
+var ctx;
+var audioElement;
+var WIDTH = 500;
+var HEIGHT = 281; 
+var img_index=0;
+var images = [];
+var IMAGE_URL = [
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image1.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image3.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image5.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image7.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image9.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image11.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image13.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image15.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image17.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image19.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image21.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image23.jpg',
+    'http://dl.dropbox.com/u/1664148/html/PuchPuch/img/image25.jpg'
+    
+];
+var IMAGE_NUM = IMAGE_URL.length;
+    
+    
+function clear() {
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+    
+function loadImage(url) {
+    var image = new Image();
+    image.src = url + '?' + new Date().getTime();
+    return image;
+}
+    
+function init() {
+  canvas = document.getElementById("canvas");
+  audioElement = document.getElementById('audio');
+  ctx = canvas.getContext("2d");
+  for (var i = 0; i < IMAGE_NUM; i++) {
+        images[i] = loadImage(IMAGE_URL[i]);
+  }
+  return setInterval(draw, 50);
+}
+
+
+function draw() {
+  clear();
+  WIDTH= window.innerWidth;
+  HEIGHT =window.innerHeight;
+  ctx.canvas.width  = WIDTH;
+  ctx.canvas.height = HEIGHT;
+ctx.scale(WIDTH/500, WIDTH/500);
+  ctx.drawImage(images[img_index],0,0);
+  img_index++;
+  if(img_index==IMAGE_NUM)
+      img_index=0;
+ 
+}
+
+init();
+audioElement.currentTime = 0;
+audioElement.play();
+</script>
+
+  </section>
+</body>
+</html
