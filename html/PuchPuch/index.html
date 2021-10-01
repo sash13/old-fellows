@@ -84,6 +84,10 @@ ctx.scale(WIDTH/500, WIDTH/500);
 init();
 audioElement.currentTime = 0;
 audioElement.play();
+window.onload = (event) => {
+  document.querySelector('audio').play();
+};
+	
 </script>
 
   </section>
